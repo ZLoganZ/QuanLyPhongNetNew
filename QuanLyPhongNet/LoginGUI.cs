@@ -60,5 +60,10 @@ namespace QuanLyPhongNet
             Account managerAccount = new Account("Manager", "123456");
             Account staffAccount = new Account("Staff", "123456");
         }
+
+        private void LoginGUI_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

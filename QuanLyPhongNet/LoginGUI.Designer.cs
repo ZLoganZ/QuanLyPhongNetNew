@@ -158,6 +158,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginGUI";
             this.Text = "Giao Diện Đăng Nhập";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginGUI_FormClosed);
             this.Load += new System.EventHandler(this.LoginGUILoadEventHandler);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
