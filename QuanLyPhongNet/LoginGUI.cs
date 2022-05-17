@@ -35,7 +35,7 @@ namespace QuanLyPhongNet
             {
                 if (cboUser.Text.Equals("Staff") &&txtPassword.Text.Equals("123456"))
                 {
-                    HomeGUI frmHome = new HomeGUI();
+                    HomeGUI frmHome = new HomeGUI(false);
                     this.Hide();
                     frmHome.ShowDialog();
                 }

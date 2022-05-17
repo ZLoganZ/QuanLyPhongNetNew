@@ -33,7 +33,12 @@ namespace QuanLyPhongNet
             objReader = new NetRoomReader();
             objWriter = new NetRoomWriter();
         }
-
+        public HomeGUI(bool check) : this()
+        {
+            picExit.Enabled = check;
+            picExit.Visible = check;
+            label37.Visible = check;
+        }
         private void HomeGUILoadEventHandler(object sender, EventArgs e)
         {
             this.Location = new Point(0, 0);
