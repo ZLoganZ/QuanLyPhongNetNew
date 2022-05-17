@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeGUI));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabClient = new System.Windows.Forms.TabPage();
+            this.label37 = new System.Windows.Forms.Label();
             this.picExit = new System.Windows.Forms.PictureBox();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -119,7 +120,6 @@
             this.drgvUserGroup = new System.Windows.Forms.DataGridView();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.timerHome = new System.Windows.Forms.Timer(this.components);
-            this.label37 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
@@ -211,6 +211,18 @@
             this.tabClient.Size = new System.Drawing.Size(1173, 643);
             this.tabClient.TabIndex = 0;
             this.tabClient.Text = "Các Máy Trạm";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.Color.Transparent;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label37.Location = new System.Drawing.Point(1078, 77);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(58, 24);
+            this.label37.TabIndex = 61;
+            this.label37.Text = "Thoát";
             // 
             // picExit
             // 
@@ -1133,18 +1145,6 @@
             // 
             this.timerHome.Tick += new System.EventHandler(this.TimeHomeTickEventHandler);
             // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.Color.Transparent;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label37.Location = new System.Drawing.Point(1078, 77);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(58, 24);
-            this.label37.TabIndex = 61;
-            this.label37.Text = "Thoát";
-            // 
             // HomeGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1156,6 +1156,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HomeGUI";
             this.Text = "Giao Diện Chính";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HomeGUI_FormClosed);
             this.Load += new System.EventHandler(this.HomeGUILoadEventHandler);
             this.tabControl.ResumeLayout(false);
             this.tabClient.ResumeLayout(false);

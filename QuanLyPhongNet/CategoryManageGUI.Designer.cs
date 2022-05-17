@@ -179,7 +179,6 @@
             this.txtUnitLotOfFood.Name = "txtUnitLotOfFood";
             this.txtUnitLotOfFood.Size = new System.Drawing.Size(250, 26);
             this.txtUnitLotOfFood.TabIndex = 42;
-//            this.txtUnitLotOfFood.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnitLotOfFood_KeyPress);
             // 
             // label48
             // 
@@ -610,7 +609,7 @@
             this.label38.ForeColor = System.Drawing.Color.Red;
             this.label38.Location = new System.Drawing.Point(556, 146);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(321, 16);
+            this.label38.Size = new System.Drawing.Size(320, 16);
             this.label38.TabIndex = 36;
             this.label38.Text = "(Ghi chú: Nhỏ hơn 30 ký tự, và không được trùng nhau)";
             // 
@@ -855,6 +854,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CategoryManageGUI";
             this.Text = "Quản Lý Danh Mục";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CategoryManageGUI_FormClosed);
             this.Load += new System.EventHandler(this.CategoryManageGUILoadEventHandler);
             this.tab.ResumeLayout(false);
             this.tadFoods.ResumeLayout(false);

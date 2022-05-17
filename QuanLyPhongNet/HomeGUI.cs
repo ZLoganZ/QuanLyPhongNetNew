@@ -285,5 +285,13 @@ namespace QuanLyPhongNet
             this.Hide();
             frmOption.ShowDialog();
         }
+
+        private void HomeGUI_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            serverManager.socketServer.Close();
+            OptionGUI frmOption = new OptionGUI();
+            this.Hide();
+            frmOption.ShowDialog();
+        }
     }
 }

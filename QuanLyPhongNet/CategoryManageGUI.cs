@@ -371,5 +371,11 @@ namespace QuanLyPhongNet
             }
         }
 
+        private void CategoryManageGUI_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            OptionGUI frmOption = new OptionGUI();
+            this.Hide();
+            frmOption.ShowDialog();
+        }
     }
 }

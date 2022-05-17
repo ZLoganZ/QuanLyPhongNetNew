@@ -49,6 +49,7 @@
             this.Controls.Add(this.button1);
             this.Name = "ReportGUI";
             this.Text = "ReportGUI";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReportGUI_FormClosed);
             this.ResumeLayout(false);
 
         }
