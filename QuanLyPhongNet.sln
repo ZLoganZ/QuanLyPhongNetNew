@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyPhongNet", "QuanLyPhongNet\QuanLyPhongNet.csproj", "{376726DE-9801-4743-824D-59BB6233CB31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyPhongNet.DAO", "QuanLyPhongNet.DAO\QuanLyPhongNet.DAO.csproj", "{F0E16198-7A34-4F56-A16D-B2FC47211F88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyPhongNet.BUS", "QuanLyPhongNet.BUS\QuanLyPhongNet.BUS.csproj", "{8E55FC3D-3FA7-4C47-9993-0611D2AE98DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyPhongNet.DTO", "QuanLyPhongNet.DTO\QuanLyPhongNet.DTO.csproj", "{5E497F82-D93D-44A6-A6B1-FBB263F1A08A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyPhongNet.Common", "QuanLyPhongNet.Common\QuanLyPhongNet.Common.csproj", "{08446271-8D00-4B34-B5DD-DABAA8E06087}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoAnSE", "..\DoAnSE\DoAnSE.csproj", "{CB29F252-56DE-41DF-A60C-255532E4DEAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{376726DE-9801-4743-824D-59BB6233CB31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{376726DE-9801-4743-824D-59BB6233CB31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{376726DE-9801-4743-824D-59BB6233CB31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{376726DE-9801-4743-824D-59BB6233CB31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0E16198-7A34-4F56-A16D-B2FC47211F88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0E16198-7A34-4F56-A16D-B2FC47211F88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0E16198-7A34-4F56-A16D-B2FC47211F88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0E16198-7A34-4F56-A16D-B2FC47211F88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E55FC3D-3FA7-4C47-9993-0611D2AE98DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E55FC3D-3FA7-4C47-9993-0611D2AE98DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E55FC3D-3FA7-4C47-9993-0611D2AE98DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E55FC3D-3FA7-4C47-9993-0611D2AE98DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E497F82-D93D-44A6-A6B1-FBB263F1A08A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E497F82-D93D-44A6-A6B1-FBB263F1A08A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E497F82-D93D-44A6-A6B1-FBB263F1A08A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E497F82-D93D-44A6-A6B1-FBB263F1A08A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08446271-8D00-4B34-B5DD-DABAA8E06087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08446271-8D00-4B34-B5DD-DABAA8E06087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08446271-8D00-4B34-B5DD-DABAA8E06087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08446271-8D00-4B34-B5DD-DABAA8E06087}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB29F252-56DE-41DF-A60C-255532E4DEAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB29F252-56DE-41DF-A60C-255532E4DEAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB29F252-56DE-41DF-A60C-255532E4DEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB29F252-56DE-41DF-A60C-255532E4DEAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
