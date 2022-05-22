@@ -9,12 +9,25 @@
     public class Member
     {
         private string accountName;
+        private int accountID;
         private string password;
         private string groupUserName;
         private TimeSpan timeInAccount;
         private float currentMoney;
         private string status;
 
+        public int MemberID
+        {
+            get
+            {
+                return accountID;
+            }
+
+            set
+            {
+                accountID = value;
+            }
+        }
         public string AccountName
         {
             get

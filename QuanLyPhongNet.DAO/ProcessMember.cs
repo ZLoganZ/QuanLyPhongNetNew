@@ -22,7 +22,8 @@
             return (from member in objReader.Members
                     select new QuanLyPhongNet.DTO.Member
                     {
-                        AccountName=member.AccountName,
+                        MemberID = member.MemberID,
+                        AccountName =member.AccountName,
                         Password=member.Password,
                         GroupUserName=member.GroupUser,
                         TimeInAccount=member.CurrentTime.Value,

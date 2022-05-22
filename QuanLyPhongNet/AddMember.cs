@@ -46,11 +46,12 @@ namespace QuanLyPhongNet
                 txtPass.Select();
                 return;
             }
-            else
+            else if(grbTimeManager.Enabled == false)
             {
                 grbTimeManager.Enabled = true;
                 btnOK.Text = "Cập Nhập";
                 txtAddMoney.Select();
+                return;
             }
             if (txtAddMoney.Text == "" || txtAddMoney.Text == "0")
             {
