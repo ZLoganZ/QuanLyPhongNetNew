@@ -38,12 +38,14 @@ namespace QuanLyPhongNet
                     HomeGUI frmHome = new HomeGUI(false);
                     this.Hide();
                     frmHome.ShowDialog();
+                    this.Show();
                 }
                 else if (cboUser.Text.Equals("Manager") && txtPassword.Text.Equals("123456"))
                 {
                     OptionGUI frmOption = new OptionGUI();
                     this.Hide();
                     frmOption.ShowDialog();
+                    this.Show();
                 }
                 else
                 {

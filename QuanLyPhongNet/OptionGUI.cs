@@ -19,9 +19,7 @@ namespace QuanLyPhongNet
 
         private void SignOutLinkClickedEventHandler(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            LoginGUI frmLogin = new LoginGUI();
-            this.Hide();
-            frmLogin.ShowDialog();
+            this.Close();
         }
 
         private void PicHomeClickEventHandler(object sender, EventArgs e)

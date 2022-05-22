@@ -48,9 +48,6 @@ namespace QuanLyPhongNet
         private void LinkLabelLinkClickedEventHandler(object sender, LinkLabelLinkClickedEventArgs e)
         {
             serverManager.socketServer.Close();
-            LoginGUI frmLogin = new LoginGUI();
-            this.Hide();
-            frmLogin.ShowDialog();
         }
         public void LoadClient()
         {
