@@ -156,6 +156,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OptionGUI";
             this.Text = "Giao Diện Các Tùy Chọn";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OptionGUI_FormClosed);
             this.Load += new System.EventHandler(this.OptionGUILoadEventHandler);
             ((System.ComponentModel.ISupportInitialize)(this.picReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHome)).EndInit();

@@ -79,5 +79,10 @@ namespace QuanLyPhongNet
         {
             this.Location = new Point(50, 50);
         }
+
+        private void OptionGUI_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
