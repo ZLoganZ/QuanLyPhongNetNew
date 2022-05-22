@@ -83,7 +83,7 @@ namespace QuanLyPhongNet
                 else
                 {
                     float money1 = money / basaumuoi;
-                    objWriter.InsertMember(txtName.Text, txtPass.Text, "Hội viên", TimeSpan.FromSeconds((float.Parse(txtAddMoney.Text) * (basaumuoi / 10000))), float.Parse(txtAddMoney.Text), "Cho phép");
+                    objWriter.InsertMember(txtName.Text, txtPass.Text, "Hội viên", TimeSpan.Parse(TimeSpan.FromSeconds((float.Parse(txtAddMoney.Text) * (basaumuoi / 10000))).ToString()), float.Parse(txtAddMoney.Text), "Cho phép");
                     MessageBox.Show("Thêm thành công!");
                     txtName.Text = "";
                     txtPass.Text = "";

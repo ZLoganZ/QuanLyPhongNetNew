@@ -18,6 +18,7 @@ namespace QuanLyPhongNet
         ServerManager serverManager;
         private NetRoomReader objReader;
         private NetRoomWriter objWriter;
+        private TabControl tab;
 
         public HomeGUI()
         {
@@ -32,6 +33,7 @@ namespace QuanLyPhongNet
             timerHome.Start();
             objReader = new NetRoomReader();
             objWriter = new NetRoomWriter();
+            tab = new TabControl();
         }
         public HomeGUI(bool check) : this()
         {
@@ -274,7 +276,16 @@ namespace QuanLyPhongNet
 
         private void picDeletememberEventHandler(object sender, EventArgs e)
         {
-
+                DialogResult CheckYN;
+                CheckYN = MessageBox.Show("Có chắc xóa không?", "Trả lời", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (CheckYN == DialogResult.Yes)
+                {
+                    int r = drgvMember.CurrentRow.Index;
+                int id = int.Parse(drgvMember.Rows[r].Cells[0].Value.ToString());
+                objWriter.DeleteMember(id);
+                    MessageBox.Show("Đã xoá thành công!");
+                    LoadSourceToDRGV();
+                }
         }
 
         private void ExitEventHandler(object sender, EventArgs e)

@@ -69,7 +69,7 @@
         {
             using (QuanLyPhongNETDataContext objWriter = new QuanLyPhongNETDataContext())
             {
-                var objDelete = objWriter.Members.Single(x => x.MemberID == memberID);
+                Member objDelete = objWriter.Members.Single(x => x.MemberID == memberID);
                 objWriter.Members.DeleteOnSubmit(objDelete);
                 objWriter.SubmitChanges();
             }
