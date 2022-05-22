@@ -38,6 +38,7 @@ namespace QuanLyPhongNet
 
         private void OKClickEventHandler(object sender, EventArgs e)
         {
+            
             this.Close();
         }
     }

@@ -173,42 +173,43 @@ namespace QuanLyPhongNet
 
             OrderServiceGUI frmOrder = new OrderServiceGUI();
             frmOrder.ShowDialog();
-            this.Refresh();
+            LoadSourceToDRGV();
         }
 		
 		 private void drgvFood_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             OrderServiceGUI frmOrder = new OrderServiceGUI();
             frmOrder.ShowDialog();
-            this.Refresh();
+            LoadSourceToDRGV();
         }
 		
 		private void drgvCard_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             OrderServiceGUI frmOrder = new OrderServiceGUI();
             frmOrder.ShowDialog();
-            this.Refresh();
+            LoadSourceToDRGV();
         }
 		
 		private void picAddMember_Click(object sender, EventArgs e)
         {
             AddMemberGUI frmAddMember = new AddMemberGUI();
             frmAddMember.ShowDialog();
-            this.Refresh();
+            LoadSourceToDRGV();
+
         }
 		
 		private void drgvMember_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             AddTimeMemberGUI frmAddTime = new AddTimeMemberGUI();
             frmAddTime.ShowDialog();
-            this.Refresh();
+            LoadSourceToDRGV();
         }
 		
 		private void picUpdateMember_Click(object sender, EventArgs e)
         {
             AddTimeMemberGUI frmAddTime = new AddTimeMemberGUI();
             frmAddTime.ShowDialog();
-            this.Refresh();
+            LoadSourceToDRGV();
         }
 		
 		private void picAddMember_MouseHover(object sender, EventArgs e)
@@ -261,14 +262,14 @@ namespace QuanLyPhongNet
         {
             OrderServiceGUI frmOrder = new OrderServiceGUI();
             frmOrder.ShowDialog();
-            this.Refresh();
+            LoadSourceToDRGV();
         }
 
         private void drgvDrink_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             OrderServiceGUI frmOrder = new OrderServiceGUI();
             frmOrder.ShowDialog();
-            this.Refresh();
+            LoadSourceToDRGV();
         }
 
         private void picDeletememberEventHandler(object sender, EventArgs e)

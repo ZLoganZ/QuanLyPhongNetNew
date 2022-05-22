@@ -79,7 +79,7 @@
             this.label5.ForeColor = System.Drawing.Color.Blue;
             this.label5.Location = new System.Drawing.Point(6, 71);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 16);
+            this.label5.Size = new System.Drawing.Size(101, 16);
             this.label5.TabIndex = 15;
             this.label5.Text = "Tiền Nạp Thêm";
             // 
@@ -90,7 +90,7 @@
             this.label4.ForeColor = System.Drawing.Color.Blue;
             this.label4.Location = new System.Drawing.Point(8, 28);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 16);
+            this.label4.Size = new System.Drawing.Size(92, 16);
             this.label4.TabIndex = 14;
             this.label4.Text = "Tiền Hiện Còn";
             // 
@@ -111,7 +111,7 @@
             this.label1.ForeColor = System.Drawing.Color.Blue;
             this.label1.Location = new System.Drawing.Point(57, 81);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 16);
+            this.label1.Size = new System.Drawing.Size(62, 16);
             this.label1.TabIndex = 21;
             this.label1.Text = "Mật Khẩu";
             // 
@@ -138,7 +138,7 @@
             this.lblName.ForeColor = System.Drawing.Color.Blue;
             this.lblName.Location = new System.Drawing.Point(57, 36);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(89, 16);
+            this.lblName.Size = new System.Drawing.Size(88, 16);
             this.lblName.TabIndex = 16;
             this.lblName.Text = "Tên tài khoản";
             // 
@@ -190,7 +190,7 @@
             this.btnOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOK.Location = new System.Drawing.Point(85, 258);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(95, 32);
+            this.btnOK.Size = new System.Drawing.Size(112, 32);
             this.btnOK.TabIndex = 27;
             this.btnOK.Text = "Đồng Ý";
             this.btnOK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
