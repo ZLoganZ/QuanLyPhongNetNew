@@ -27,13 +27,14 @@ namespace QuanLyPhongNet
             HomeGUI frmHome = new HomeGUI();
             this.Hide();
             frmHome.ShowDialog();
+            this.Show();
         }
-
         private void PicCategoryClickEventHandler(object sender, EventArgs e)
         {
             CategoryManageGUI frmCategory = new CategoryManageGUI();
             this.Hide();
             frmCategory.ShowDialog();
+            this.Show();
         }
 
         private void PicReportClickEventHandler(object sender, EventArgs e)
@@ -41,6 +42,7 @@ namespace QuanLyPhongNet
             ReportGUI frmReport = new ReportGUI();
             this.Hide();
             frmReport.ShowDialog();
+            this.Show();
         }
 
         private void PicHomeMouseHoverEventHandler(object sender, EventArgs e)

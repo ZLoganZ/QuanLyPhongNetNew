@@ -48,6 +48,7 @@ namespace QuanLyPhongNet
         private void LinkLabelLinkClickedEventHandler(object sender, LinkLabelLinkClickedEventArgs e)
         {
             serverManager.socketServer.Close();
+            this.Close();
         }
         public void LoadClient()
         {
@@ -278,17 +279,13 @@ namespace QuanLyPhongNet
         private void ExitEventHandler(object sender, EventArgs e)
         {
             serverManager.socketServer.Close();
-            OptionGUI frmOption = new OptionGUI();
-            this.Hide();
-            frmOption.ShowDialog();
+            this.Close();
         }
 
         private void HomeGUI_FormClosed(object sender, FormClosedEventArgs e)
         {
             serverManager.socketServer.Close();
-            OptionGUI frmOption = new OptionGUI();
-            this.Hide();
-            frmOption.ShowDialog();
+            this.Close();
         }
     }
 }

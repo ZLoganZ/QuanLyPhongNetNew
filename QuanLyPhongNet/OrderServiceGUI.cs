@@ -33,16 +33,12 @@ namespace QuanLyPhongNet
 
         private void CancelClickEventHandler(object sender, EventArgs e)
         {
-            HomeGUI frmHome = new HomeGUI();
             this.Close();
-            frmHome.ShowDialog();
         }
 
         private void OKClickEventHandler(object sender, EventArgs e)
         {
-            HomeGUI frmHome = new HomeGUI();
             this.Close();
-            frmHome.ShowDialog();
         }
     }
 }
