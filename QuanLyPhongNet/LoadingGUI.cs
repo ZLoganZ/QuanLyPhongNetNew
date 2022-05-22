@@ -42,6 +42,7 @@ namespace QuanLyPhongNet
                     String name = string.Format(@"{0}", instance);
                     Servers.Add(name);
                     currentRow++;
+                    System.Threading.Thread.Sleep(400);
                     bgWorker.ReportProgress((currentRow / rowCount) * 75 + 25);
                 }
             }

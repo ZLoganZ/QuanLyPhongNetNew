@@ -61,9 +61,7 @@ namespace QuanLyPhongNet
 
         private void ExitEventHandler(object sender, EventArgs e)
         {
-            OptionGUI frmOption = new OptionGUI();
-            this.Hide();
-            frmOption.ShowDialog();     
+            this.Close();
         }
 
         private void SearchMouseHoverEventHandler(object sender, EventArgs e)
@@ -373,9 +371,7 @@ namespace QuanLyPhongNet
 
         private void CategoryManageGUI_FormClosed(object sender, FormClosedEventArgs e)
         {
-            OptionGUI frmOption = new OptionGUI();
-            this.Hide();
-            frmOption.ShowDialog();
+            this.Close();
         }
     }
 }
