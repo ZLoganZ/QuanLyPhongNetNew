@@ -14,10 +14,12 @@ namespace QuanLyPhongNet
     public partial class AddMemberGUI : Form
     {
         private NetRoomWriter objWriter;
+        private NetRoomReader objReader;
         public AddMemberGUI()
         {
             InitializeComponent();
             objWriter = new NetRoomWriter();
+            objReader = new NetRoomReader();
         }
 
         private void AddMemberGUILoadEventHandler(object sender, EventArgs e)
@@ -46,7 +48,17 @@ namespace QuanLyPhongNet
                 txtPass.Select();
                 return;
             }
-            else if(grbTimeManager.Enabled == false)
+            List<DTO.Member> listMember = new List<DTO.Member>();
+            foreach (DTO.Member member in objReader.GetAllMembers())
+            {
+                if (member.AccountName.Equals(txtName.Text))
+                {
+                    MessageBox.Show("Tài khoản đã tồn tại!");
+                    txtName.Select();
+                    return;
+                }
+            }
+            if (grbTimeManager.Enabled == false)
             {
                 grbTimeManager.Enabled = true;
                 btnOK.Text = "Cập Nhập";

@@ -61,7 +61,8 @@ namespace QuanLyPhongNet
                 txtName.Select();
                 return;
             }
-            objWriter.UpdateMember(m.MemberID, m.AccountName, m.Password, m.GroupUserName, m.TimeInAccount + TimeSpan.FromSeconds((float.Parse(txtAddMoney.Text) * (basaumuoi / 10000))), m.CurrentMoney + float.Parse(txtAddMoney.Text), "Cho Phép");
+            //MessageBox.Show((TimeSpan.Parse((TimeSpan.FromSeconds((float.Parse(txtAddMoney.Text) * (basaumuoi / 10000))) + m.TimeInAccount).ToString()).ToString()));
+            objWriter.UpdateMember(m.MemberID, m.AccountName, m.Password, m.GroupUserName, TimeSpan.Parse((TimeSpan.FromSeconds((float.Parse(txtAddMoney.Text) * (basaumuoi / 10000))) + m.TimeInAccount).ToString()), m.CurrentMoney + float.Parse(txtAddMoney.Text), "Cho Phép");
             MessageBox.Show("Thêm thành công!");
             //HomeGUI frmHome = new HomeGUI();
             this.Close();
