@@ -19,9 +19,9 @@
         }
 
         /// <summary>
-        /// Kiem tra ket noi de su dung LINQ.
+        /// Kiểm tra kết nối để sử dụng LINQ.
         /// </summary>
-        /// <returns>Tra ve true neu mo ket noi thanh cong, false neu that bai.</returns>
+        /// <returns>Trả về true nếu mở kết nối thành công, false nếu thất bại.</returns>
         public bool TestConnection()
         {
             cnn = new SqlConnection(strConnect);
@@ -40,9 +40,9 @@
         }
 
         /// <summary>
-        /// ket noi de su dung ADO.net.
+        /// Kết nối để sử dụng ADO.net.
         /// </summary>
-        /// <returns>Tra ve doi tuong SqlConnection.</returns>
+        /// <returns>Trả về đối tượng SqlConnection.</returns>
         public SqlConnection Connect()
         {
             cnn = new SqlConnection(strConnect);
@@ -52,7 +52,7 @@
         }
 
         /// <summary>
-        /// Dong ket noi.
+        /// Đóng kết nối.
         /// </summary>
         public void DisConnect()
         {
