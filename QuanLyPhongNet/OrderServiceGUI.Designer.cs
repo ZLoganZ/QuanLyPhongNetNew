@@ -63,7 +63,7 @@
             this.lblName.ForeColor = System.Drawing.Color.Blue;
             this.lblName.Location = new System.Drawing.Point(64, 25);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(35, 16);
+            this.lblName.Size = new System.Drawing.Size(34, 16);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Tên:";
             // 
@@ -79,7 +79,7 @@
             // txtGroupName
             // 
             this.txtGroupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGroupName.Location = new System.Drawing.Point(110, 19);
+            this.txtGroupName.Location = new System.Drawing.Point(110, 22);
             this.txtGroupName.Name = "txtGroupName";
             this.txtGroupName.Size = new System.Drawing.Size(197, 22);
             this.txtGroupName.TabIndex = 4;
@@ -103,7 +103,7 @@
             this.label3.ForeColor = System.Drawing.Color.Blue;
             this.label3.Location = new System.Drawing.Point(12, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 16);
+            this.label3.Size = new System.Drawing.Size(84, 16);
             this.label3.TabIndex = 13;
             this.label3.Text = "Thuộc nhóm:";
             // 
@@ -132,7 +132,7 @@
             this.label1.ForeColor = System.Drawing.Color.Blue;
             this.label1.Location = new System.Drawing.Point(64, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 16);
+            this.label1.Size = new System.Drawing.Size(31, 16);
             this.label1.TabIndex = 8;
             this.label1.Text = "Giá:";
             // 
@@ -143,7 +143,7 @@
             this.label2.ForeColor = System.Drawing.Color.Blue;
             this.label2.Location = new System.Drawing.Point(64, 114);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 16);
+            this.label2.Size = new System.Drawing.Size(49, 16);
             this.label2.TabIndex = 9;
             this.label2.Text = "Đơn Vị:";
             // 
@@ -189,7 +189,7 @@
             this.label4.ForeColor = System.Drawing.Color.Blue;
             this.label4.Location = new System.Drawing.Point(8, 28);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 16);
+            this.label4.Size = new System.Drawing.Size(100, 16);
             this.label4.TabIndex = 14;
             this.label4.Text = "Lượng Tồn Kho:";
             // 

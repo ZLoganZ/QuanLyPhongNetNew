@@ -972,6 +972,7 @@
             this.drgvFood.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.drgvFood.Size = new System.Drawing.Size(1100, 536);
             this.drgvFood.TabIndex = 0;
+            this.drgvFood.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drgvFood_CellClick);
             this.drgvFood.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drgvFood_CellDoubleClick);
             // 
             // tabDrink
@@ -998,6 +999,7 @@
             this.drgvDrink.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.drgvDrink.Size = new System.Drawing.Size(1109, 536);
             this.drgvDrink.TabIndex = 1;
+            this.drgvDrink.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drgvDrink_CellClick);
             this.drgvDrink.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drgvDrink_CellDoubleClick);
             // 
             // tabCard
@@ -1023,7 +1025,8 @@
             this.drgvCard.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.drgvCard.Size = new System.Drawing.Size(1113, 542);
             this.drgvCard.TabIndex = 1;
-            this.drgvCard.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drgvCard_CellDoubleClick_1);
+            this.drgvCard.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drgvCard_CellClick);
+            this.drgvCard.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drgvCard_CellDoubleClick);
             // 
             // txtSearchService
             // 

@@ -61,7 +61,7 @@ namespace QuanLyPhongNet
             IsFinish = true;
             bgWorker.CancelAsync();
             timerLoading.Stop();
-            MessageBox.Show("Kết nối thành công!");
+            MessageBox.Show("Lấy Server thành công!");
             this.Close();
         }
 

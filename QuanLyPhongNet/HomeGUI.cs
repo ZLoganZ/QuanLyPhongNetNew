@@ -18,7 +18,11 @@ namespace QuanLyPhongNet
         ServerManager serverManager;
         private NetRoomReader objReader;
         private NetRoomWriter objWriter;
-        private TabControl tab;
+        private string name;
+        private float price;
+        private string unit;
+        private string group;
+        private int inventory;
 
         public HomeGUI()
         {
@@ -33,7 +37,6 @@ namespace QuanLyPhongNet
             timerHome.Start();
             objReader = new NetRoomReader();
             objWriter = new NetRoomWriter();
-            tab = new TabControl();
         }
         public HomeGUI(bool check) : this()
         {
@@ -172,22 +175,33 @@ namespace QuanLyPhongNet
 
         private void picOrderEventHandler(object sender, EventArgs e)
         {
-
-            OrderServiceGUI frmOrder = new OrderServiceGUI();
-            frmOrder.ShowDialog();
+            OrderServiceGUI order = new OrderServiceGUI(name, price, unit, group, inventory);
+            order.ShowDialog();
             LoadSourceToDRGV();
         }
 		
 		 private void drgvFood_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            OrderServiceGUI frmOrder = new OrderServiceGUI();
+            int r = drgvFood.CurrentRow.Index;
+            name = drgvFood.Rows[r].Cells[1].Value.ToString();
+            price = int.Parse(drgvFood.Rows[r].Cells[3].Value.ToString());
+            unit = drgvFood.Rows[r].Cells[4].Value.ToString();
+            group = "Thức ăn";
+            inventory = int.Parse(drgvFood.Rows[r].Cells[5].Value.ToString());
+            OrderServiceGUI frmOrder = new OrderServiceGUI(name, price, unit, group, inventory);
             frmOrder.ShowDialog();
             LoadSourceToDRGV();
         }
 		
 		private void drgvCard_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            OrderServiceGUI frmOrder = new OrderServiceGUI();
+            int r = drgvCard.CurrentRow.Index;
+            name = drgvCard.Rows[r].Cells[1].Value.ToString();
+            price = int.Parse(drgvCard.Rows[r].Cells[3].Value.ToString());
+            unit = drgvCard.Rows[r].Cells[4].Value.ToString();
+            group = "Thẻ game";
+            inventory = int.Parse(drgvCard.Rows[r].Cells[5].Value.ToString());
+            OrderServiceGUI frmOrder = new OrderServiceGUI(name, price, unit, group, inventory);
             frmOrder.ShowDialog();
             LoadSourceToDRGV();
         }
@@ -260,16 +274,15 @@ namespace QuanLyPhongNet
             }
         }
 
-        private void drgvCard_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            OrderServiceGUI frmOrder = new OrderServiceGUI();
-            frmOrder.ShowDialog();
-            LoadSourceToDRGV();
-        }
-
         private void drgvDrink_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            OrderServiceGUI frmOrder = new OrderServiceGUI();
+            int r = drgvDrink.CurrentRow.Index;
+            name = drgvDrink.Rows[r].Cells[1].Value.ToString();
+            price = int.Parse(drgvDrink.Rows[r].Cells[3].Value.ToString());
+            unit = drgvDrink.Rows[r].Cells[4].Value.ToString();
+            group = "Thức uống";
+            inventory = int.Parse(drgvDrink.Rows[r].Cells[5].Value.ToString());
+            OrderServiceGUI frmOrder = new OrderServiceGUI(name, price, unit, group, inventory);
             frmOrder.ShowDialog();
             LoadSourceToDRGV();
         }
@@ -298,6 +311,36 @@ namespace QuanLyPhongNet
         {
             serverManager.socketServer.Close();
             this.Close();
+        }
+
+        private void drgvFood_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int r = drgvFood.CurrentRow.Index;
+            name = drgvFood.Rows[r].Cells[1].Value.ToString();
+            price = int.Parse(drgvFood.Rows[r].Cells[3].Value.ToString());
+            unit = drgvFood.Rows[r].Cells[4].Value.ToString();
+            group = "Thức ăn";
+            inventory = int.Parse(drgvFood.Rows[r].Cells[5].Value.ToString());
+        }
+
+        private void drgvDrink_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int r = drgvDrink.CurrentRow.Index;
+            name = drgvDrink.Rows[r].Cells[1].Value.ToString();
+            price = int.Parse(drgvDrink.Rows[r].Cells[3].Value.ToString());
+            unit = drgvDrink.Rows[r].Cells[4].Value.ToString();
+            group = "Thức uống";
+            inventory = int.Parse(drgvDrink.Rows[r].Cells[5].Value.ToString());
+        }
+
+        private void drgvCard_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int r = drgvCard.CurrentRow.Index;
+            name = drgvCard.Rows[r].Cells[1].Value.ToString();
+            price = int.Parse(drgvCard.Rows[r].Cells[3].Value.ToString());
+            unit = drgvCard.Rows[r].Cells[4].Value.ToString();
+            group = "Thẻ game";
+            inventory = int.Parse(drgvCard.Rows[r].Cells[5].Value.ToString());
         }
     }
 }

@@ -17,8 +17,18 @@ namespace QuanLyPhongNet
         public OrderServiceGUI()
         {
             InitializeComponent();
+            txtGroupName.Enabled = false;
+            textBox5.Enabled = false;
             //frmHome = new HomeGUI();
-        }    
+        }
+        public OrderServiceGUI(string name,  float price, string unit, string group, int inventory) : this()
+        {
+            txtName.Text = name;
+            txtPrice.Text = price.ToString();
+            txtUnit.Text = unit;
+            txtGroupName.Text = group;
+            textBox5.Text = inventory.ToString();
+        }
 
         private void OrderServiceGUILoadEventHandler(object sender, EventArgs e)
         {
@@ -28,7 +38,7 @@ namespace QuanLyPhongNet
         
         private void LoadSourceToAllControls()
         {
-            //txtName.Text = frmHome.serviceName;
+            
         }
 
         private void CancelClickEventHandler(object sender, EventArgs e)
