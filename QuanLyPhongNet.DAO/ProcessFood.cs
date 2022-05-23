@@ -32,6 +32,21 @@
                         InventoryNumber=(int)food.InventoryNumber,
                     }).ToList();
         }
+        
+        public List<QuanLyPhongNet.DTO.Food> SearchFood(string name)
+        {
+            return (from food in objReader.Foods
+                    where food.FoodName.Contains(name)
+                    select new QuanLyPhongNet.DTO.Food
+                    {
+                        FoodID = food.FoodID,
+                        Name = food.FoodName,
+                        CategoryName = food.CategoryName,
+                        PriceUnit = (float)food.PriceUnit,
+                        UnitLot = food.UnitLot,
+                        InventoryNumber = (int)food.InventoryNumber,
+                    }).ToList();
+        }
 
         public void InsertFood(string name, string categoryName, float priceUnit, string unitLot, int inventoryNumber)
         {

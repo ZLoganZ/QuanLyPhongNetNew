@@ -81,9 +81,9 @@
             cardObjectWriter.UpdateCard(cardID, name, categoryName, priceUnit, unitLot, inventoryNumber);
         }
 
-        public void UpdateCategory(string categoryName)
+        public void UpdateCategory(string index, string categoryName)
         {
-            categoryObjectWriter.UpdateCategory(categoryName);
+            categoryObjectWriter.UpdateCategory(index, categoryName);
         }
 
         public void UpdateClient(string name, string groupClientName, string status, string note)

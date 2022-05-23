@@ -26,6 +26,16 @@
                     }).ToList();
         }
 
+        public List<QuanLyPhongNet.DTO.Category> SearchCategory(string name)
+        {
+            return (from category in objReader.Categories
+                    where category.CategoryName.Contains(name)
+                    select new QuanLyPhongNet.DTO.Category
+                    {
+                        CategoryName = category.CategoryName
+                    }).ToList();
+        }
+
         public void InsertCatergory(string name)
         {
             using (QuanLyPhongNETDataContext objWriter = new QuanLyPhongNETDataContext())
@@ -38,12 +48,12 @@
             }
         }
 
-        public void UpdateCategory(string name)
+        public void UpdateCategory(string index, string name)
         {
             using (QuanLyPhongNETDataContext objWriter = new QuanLyPhongNETDataContext())
             {
                 Category objUpdate;
-                objUpdate = objWriter.Categories.FirstOrDefault(x => x.CategoryName.Equals(name));
+                objUpdate = objWriter.Categories.FirstOrDefault(x => x.CategoryName.Equals(index));
                 objUpdate.CategoryName = name;
                 objWriter.SubmitChanges();
             }

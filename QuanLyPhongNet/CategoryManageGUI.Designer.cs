@@ -93,6 +93,8 @@
             this.picDelete = new System.Windows.Forms.PictureBox();
             this.picUpdate = new System.Windows.Forms.PictureBox();
             this.picAdd = new System.Windows.Forms.PictureBox();
+            this.picReload = new System.Windows.Forms.PictureBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.tab.SuspendLayout();
             this.tadFoods.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -110,6 +112,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUpdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReload)).BeginInit();
             this.SuspendLayout();
             // 
             // tab
@@ -681,7 +684,7 @@
             this.label36.BackColor = System.Drawing.Color.Transparent;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label36.Location = new System.Drawing.Point(1014, 366);
+            this.label36.Location = new System.Drawing.Point(1033, 366);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(45, 24);
             this.label36.TabIndex = 59;
@@ -693,11 +696,11 @@
             this.label35.BackColor = System.Drawing.Color.Transparent;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label35.Location = new System.Drawing.Point(832, 366);
+            this.label35.Location = new System.Drawing.Point(884, 366);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(92, 24);
+            this.label35.Size = new System.Drawing.Size(85, 24);
             this.label35.TabIndex = 58;
-            this.label35.Text = "Cập nhập";
+            this.label35.Text = "Cập nhật";
             // 
             // label34
             // 
@@ -705,7 +708,7 @@
             this.label34.BackColor = System.Drawing.Color.Transparent;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.Red;
-            this.label34.Location = new System.Drawing.Point(689, 365);
+            this.label34.Location = new System.Drawing.Point(769, 366);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(60, 24);
             this.label34.TabIndex = 53;
@@ -794,7 +797,7 @@
             this.picDelete.BackColor = System.Drawing.Color.Transparent;
             this.picDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picDelete.Image = global::QuanLyPhongNet.Properties.Resources.delete_button_png_271;
-            this.picDelete.Location = new System.Drawing.Point(994, 289);
+            this.picDelete.Location = new System.Drawing.Point(1013, 289);
             this.picDelete.Name = "picDelete";
             this.picDelete.Size = new System.Drawing.Size(82, 74);
             this.picDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -809,7 +812,7 @@
             this.picUpdate.BackColor = System.Drawing.Color.Transparent;
             this.picUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picUpdate.Image = global::QuanLyPhongNet.Properties.Resources._13924959571;
-            this.picUpdate.Location = new System.Drawing.Point(836, 289);
+            this.picUpdate.Location = new System.Drawing.Point(885, 289);
             this.picUpdate.Name = "picUpdate";
             this.picUpdate.Size = new System.Drawing.Size(82, 74);
             this.picUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -824,7 +827,7 @@
             this.picAdd.BackColor = System.Drawing.Color.Transparent;
             this.picAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picAdd.Image = global::QuanLyPhongNet.Properties.Resources.add11;
-            this.picAdd.Location = new System.Drawing.Point(678, 289);
+            this.picAdd.Location = new System.Drawing.Point(758, 290);
             this.picAdd.Name = "picAdd";
             this.picAdd.Size = new System.Drawing.Size(82, 74);
             this.picAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -833,6 +836,33 @@
             this.picAdd.Click += new System.EventHandler(this.AddEventHandler);
             this.picAdd.MouseLeave += new System.EventHandler(this.AddMouseLeaveEventHandler);
             this.picAdd.MouseHover += new System.EventHandler(this.AddMouseHoverEventHandler);
+            // 
+            // picReload
+            // 
+            this.picReload.BackColor = System.Drawing.Color.Transparent;
+            this.picReload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picReload.Image = global::QuanLyPhongNet.Properties.Resources.Button_Reload_icon1;
+            this.picReload.Location = new System.Drawing.Point(631, 289);
+            this.picReload.Name = "picReload";
+            this.picReload.Size = new System.Drawing.Size(82, 74);
+            this.picReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picReload.TabIndex = 54;
+            this.picReload.TabStop = false;
+            this.picReload.Click += new System.EventHandler(this.ReloadEventHandler);
+            this.picReload.MouseLeave += new System.EventHandler(this.ReloadMouseLeaveEventHandler);
+            this.picReload.MouseHover += new System.EventHandler(this.ReloadMouseHoverEventHandler);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label17.Location = new System.Drawing.Point(637, 365);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(70, 24);
+            this.label17.TabIndex = 53;
+            this.label17.Text = "Reload";
             // 
             // CategoryManageGUI
             // 
@@ -844,10 +874,12 @@
             this.Controls.Add(this.label37);
             this.Controls.Add(this.label36);
             this.Controls.Add(this.label35);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.label34);
             this.Controls.Add(this.picExit);
             this.Controls.Add(this.picDelete);
             this.Controls.Add(this.picUpdate);
+            this.Controls.Add(this.picReload);
             this.Controls.Add(this.picAdd);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tab);
@@ -878,6 +910,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUpdate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReload)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -949,5 +982,7 @@
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox picReload;
+        private System.Windows.Forms.Label label17;
     }
 }

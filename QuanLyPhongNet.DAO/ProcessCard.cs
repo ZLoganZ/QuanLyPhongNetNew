@@ -32,6 +32,21 @@
                     }).ToList();
         }
 
+        public List<QuanLyPhongNet.DTO.Card> SearchCard(string name)
+        {
+            return (from card in objReader.TheCards
+                    where card.CardName.Contains(name)
+                    select new QuanLyPhongNet.DTO.Card
+                    {
+                        CardID = card.CardID,
+                        Name = card.CardName,
+                        CategoryName = card.CategoryName,
+                        PriceUnit = (float)card.PriceUnit,
+                        UnitLot = card.UnitLot,
+                        InventoryNumber = (int)card.InventoryNumber,
+                    }).ToList();
+        }
+
         public void InsertCard(string name, string categoryName, float priceUnit, string unitLot, int inventoryNumber)
         {
             using (QuanLyPhongNETDataContext objWriter = new QuanLyPhongNETDataContext())

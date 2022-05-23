@@ -30,6 +30,21 @@
                     }).ToList();
         }
 
+        public List<QuanLyPhongNet.DTO.Drink> SearchDrink(string name)
+        {
+            return (from drink in objReader.Drinks
+                    where drink.DrinkName.Contains(name)
+                    select new QuanLyPhongNet.DTO.Drink
+                    {
+                        DrinkID = drink.DrinkID,
+                        Name = drink.DrinkName,
+                        CategoryName = drink.CategoryName,
+                        PriceUnit = (float)drink.PriceUnit,
+                        UnitLot = drink.UnitLot,
+                        InventoryNumber = (int)drink.InventoryNumber,
+                    }).ToList();
+        }
+
         public void InsertDrink(string name, string categoryName, float priceUnit, string unitLot, int inventoryNumber)
         {
             using (QuanLyPhongNETDataContext objWriter = new QuanLyPhongNETDataContext())

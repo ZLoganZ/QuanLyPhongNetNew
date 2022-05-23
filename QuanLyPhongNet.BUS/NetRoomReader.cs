@@ -39,14 +39,29 @@
             return foodObjectReader.LoadAllFoods();
         }
 
+        public List<QuanLyPhongNet.DTO.Food> SearchFood(string name)
+        {
+            return foodObjectReader.SearchFood(name);
+        }
+
         public List<QuanLyPhongNet.DTO.Drink> GetAllDrinks()
         {
             return drinkObjectReader.LoadAllDrinks();
+        }
+        
+        public List<QuanLyPhongNet.DTO.Drink> SearchDrink(string name)
+        {
+            return drinkObjectReader.SearchDrink(name);
         }
 
         public List<QuanLyPhongNet.DTO.Card> GetAllCards()
         {
             return cardObjectReader.LoadAllCards();
+        }
+
+        public List<QuanLyPhongNet.DTO.Card> SearchCard(string name)
+        {
+            return cardObjectReader.SearchCard(name);
         }
 
         public List<QuanLyPhongNet.DTO.Client> GetAllClient()
@@ -57,6 +72,11 @@
         public List<QuanLyPhongNet.DTO.Category> GetAllCategorys()
         {
             return categoryObjectReader.LoadAllCategorys();
+        }
+
+        public List<QuanLyPhongNet.DTO.Category> SearchCategory(string name)
+        {
+            return categoryObjectReader.SearchCategory(name);
         }
 
         public List<QuanLyPhongNet.DTO.GroupClient> GetAllGroupClients()

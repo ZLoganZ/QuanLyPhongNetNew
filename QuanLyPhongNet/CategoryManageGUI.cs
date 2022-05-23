@@ -39,9 +39,14 @@ namespace QuanLyPhongNet
             grbInformation.ForeColor = Color.Blue;
         }
 
+        private void ReloadEventHandler(object sender, EventArgs e)
+        {
+            LoadSourceToDRGV();
+        }
+
         private void SearchEventHandler(object sender, EventArgs e)
         {
-
+            SearchProcess();
         }
 
         private void AddEventHandler(object sender, EventArgs e)
@@ -62,6 +67,16 @@ namespace QuanLyPhongNet
         private void ExitEventHandler(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ReloadMouseHoverEventHandler(object sender, EventArgs e)
+        {
+            picReload.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void ReloadMouseLeaveEventHandler(object sender, EventArgs e)
+        {
+            picReload.BorderStyle = BorderStyle.None;
         }
 
         private void SearchMouseHoverEventHandler(object sender, EventArgs e)
@@ -194,6 +209,7 @@ namespace QuanLyPhongNet
             switch (tab.SelectedIndex)
             {
                 case TAB_FOOD:
+                    txtSearch.Clear();
                     drgvInformation.DataSource = objReader.GetAllFoods();
                     drgvInformation.Columns[0].HeaderText = "Mã Định Danh";
                     drgvInformation.Columns[0].Width = 100;
@@ -204,6 +220,7 @@ namespace QuanLyPhongNet
                     drgvInformation.Columns[5].HeaderText = "Số Lượng Tồn";
                     break;
                 case TAB_DRINK:
+                    txtSearch.Clear();
                     drgvInformation.DataSource = objReader.GetAllDrinks();
                     drgvInformation.Columns[0].HeaderText = "Mã Định Danh";
                     drgvInformation.Columns[0].Width = 100;
@@ -214,6 +231,7 @@ namespace QuanLyPhongNet
                     drgvInformation.Columns[5].HeaderText = "Số Lượng Tồn";
                     break;
                 case TAB_CARD:
+                    txtSearch.Clear();
                     drgvInformation.DataSource = objReader.GetAllCards();
                     drgvInformation.Columns[0].HeaderText = "Mã Định Danh";
                     drgvInformation.Columns[0].Width = 100;
@@ -224,6 +242,7 @@ namespace QuanLyPhongNet
                     drgvInformation.Columns[5].HeaderText = "Số Lượng Tồn";
                     break;
                 case TAB_CATEGORY:
+                    txtSearch.Clear();
                     drgvInformation.DataSource = objReader.GetAllCategorys();
                     drgvInformation.Columns[0].HeaderText = "Tên Loại Danh Mục";               
                     break;
@@ -279,15 +298,55 @@ namespace QuanLyPhongNet
             switch (tab.SelectedIndex)
             {
                 case TAB_FOOD:
+                    List<DTO.Food> lf = new List<DTO.Food>();
+                    lf = objReader.GetAllFoods();
+                    foreach (DTO.Food f in lf)
+                    {
+                        if (f.Name.Equals(txtFoodName.Text))
+                        {
+                            MessageBox.Show("Món ăn đã tồn tại!");
+                            return;
+                        }
+                    }
                     objWriter.InsertFood(txtFoodName.Text, cboFoodCategory.Text, float.Parse(txtPriceUnitOfFood.Text), txtUnitLotOfFood.Text, int.Parse(txtInventoryNumberOfFood.Text));
                     break;
                 case TAB_DRINK:
+                    List<DTO.Drink> ld = new List<DTO.Drink>();
+                    ld = objReader.GetAllDrinks();
+                    foreach (DTO.Drink f in ld)
+                    {
+                        if (f.Name.Equals(txtDrinkName.Text))
+                        {
+                            MessageBox.Show("Nước uống đã tồn tại!");
+                            return;
+                        }
+                    }
                     objWriter.InsertDrink(txtDrinkName.Text, cboDrinkCategory.Text, float.Parse(txtPriceUnitOfDrink.Text), txtUnitLotOfDrink.Text, int.Parse(txtInventoryNumberOfDrink.Text));
                     break;
                 case TAB_CARD:
+                    List<DTO.Card> lc = new List<DTO.Card>();
+                    lc = objReader.GetAllCards();
+                    foreach (DTO.Card f in lc)
+                    {
+                        if (f.Name.Equals(txtCardName.Text))
+                        {
+                            MessageBox.Show("Thẻ đã tồn tại!");
+                            return;
+                        }
+                    }
                     objWriter.InsertCard(txtCardName.Text, cboCardCategory.Text, float.Parse(txtPriceUnitOfCard.Text),txtUnitLotOfCard.Text, int.Parse(txtInventoryNumberOfCard.Text));
                     break;
                 case TAB_CATEGORY:
+                    List<DTO.Category> lcg = new List<DTO.Category>();
+                    lcg = objReader.GetAllCategorys();
+                    foreach (DTO.Category f in lcg)
+                    {
+                        if (f.CategoryName.Equals(txtCategoryName.Text))
+                        {
+                            MessageBox.Show("Danh mục đã tồn tại!");
+                            return;
+                        }
+                    }
                     objWriter.InsertCategory(txtCategoryName.Text);
                     break;
             }
@@ -297,6 +356,89 @@ namespace QuanLyPhongNet
             MessageBox.Show("Thêm thành công!");
         }
 
+        public void SearchProcess()
+        {
+            switch(tab.SelectedIndex)
+            {
+                case TAB_FOOD:
+                    bool checkfood = false;
+                    List<DTO.Food> lf = new List<DTO.Food>();
+                    lf = objReader.GetAllFoods();
+                    foreach (DTO.Food f in lf)
+                    {
+                        if (f.Name.Contains(txtSearch.Text.Trim()))
+                        {
+                            checkfood = true;
+                            break;
+                        }
+                    }
+                    if (checkfood == false)
+                    {
+                        MessageBox.Show("Không tìm thấy!");
+                        return;
+                    }
+                    drgvInformation.DataSource = objReader.SearchFood(txtSearch.Text);
+                    break;
+                case TAB_DRINK:
+                    bool checkdrink = false;
+                    List<DTO.Drink> ld = new List<DTO.Drink>();
+                    ld = objReader.GetAllDrinks();
+                    foreach (DTO.Drink f in ld)
+                    {
+                        if (f.Name.Contains(txtSearch.Text))
+                        {
+                            checkdrink = true;
+                            break;
+                        }
+                    }
+                    if (checkdrink == false)
+                    {
+                        MessageBox.Show("Không tìm thấy!");
+                        return;
+                    }
+                    drgvInformation.DataSource = objReader.SearchDrink(txtSearch.Text);
+                    break;
+                case TAB_CARD:
+                    bool checkcard = false;
+                    List<DTO.Card> lc = new List<DTO.Card>();
+                    lc = objReader.GetAllCards();
+                    foreach (DTO.Card f in lc)
+                    {
+                        if (f.Name.Contains(txtSearch.Text))
+                        {
+                            checkcard = true;
+                            break;
+                        }
+                    }
+                    if (checkcard == false)
+                    {
+                        MessageBox.Show("Không tìm thấy!");
+                        return;
+                    }
+                    drgvInformation.DataSource = objReader.SearchCard(txtSearch.Text);
+                    break;
+                case TAB_CATEGORY:
+                    bool checkcategory = false;
+                    List<DTO.Category> lcg = new List<DTO.Category>();
+                    lcg = objReader.GetAllCategorys();
+                    foreach (DTO.Category f in lcg)
+                    {
+                        if (f.CategoryName.Contains(txtSearch.Text))
+                        {
+                            checkcategory = true;
+                            break;
+                        }
+                    }
+                    if (checkcategory == false)
+                    {
+                        MessageBox.Show("Không tìm thấy!");
+                        return;
+                    }
+                    drgvInformation.DataSource = objReader.SearchCategory(txtSearch.Text);
+                    break;
+            }
+        }
+        
         public void UpdateProcess()
         {
             TabPage tp = tab.SelectedTab;
@@ -317,7 +459,7 @@ namespace QuanLyPhongNet
                     objWriter.UpdateCard(int.Parse(drgvInformation.CurrentRow.Cells[0].Value.ToString()), txtCardName.Text, cboCardCategory.Text, float.Parse(txtPriceUnitOfCard.Text), txtUnitLotOfCard.Text, int.Parse(txtInventoryNumberOfCard.Text));
                     break;
                 case TAB_CATEGORY:
-                    objWriter.UpdateCategory(txtCategoryName.Text);
+                    objWriter.UpdateCategory(drgvInformation.CurrentRow.Cells[0].Value.ToString(), txtCategoryName.Text);
                     break;
             }
             ResetControl(tp);
