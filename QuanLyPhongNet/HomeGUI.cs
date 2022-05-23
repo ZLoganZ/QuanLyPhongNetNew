@@ -40,6 +40,8 @@ namespace QuanLyPhongNet
         }
         public HomeGUI(bool check) : this()
         {
+            linkLabel1.Visible = !check;
+            linkLabel1.Enabled = !check;
             picExit.Enabled = check;
             picExit.Visible = check;
             label37.Visible = check;

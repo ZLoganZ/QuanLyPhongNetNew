@@ -19,15 +19,11 @@ namespace QuanLyPhongNet
 
         private void ExitClickEventHandler(object sender, EventArgs e)
         {
-            OptionGUI frmOption = new OptionGUI();
-            frmOption.ShowDialog();
             this.Close();
         }
 
         private void ReportGUI_FormClosed(object sender, FormClosedEventArgs e)
         {
-            OptionGUI frmOption = new OptionGUI();
-            frmOption.ShowDialog();
             this.Close();
         }
     }

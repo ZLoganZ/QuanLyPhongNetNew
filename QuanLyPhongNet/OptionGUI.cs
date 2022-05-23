@@ -24,7 +24,7 @@ namespace QuanLyPhongNet
 
         private void PicHomeClickEventHandler(object sender, EventArgs e)
         {
-            HomeGUI frmHome = new HomeGUI();
+            HomeGUI frmHome = new HomeGUI(true);
             this.Hide();
             frmHome.ShowDialog();
             this.Show();
