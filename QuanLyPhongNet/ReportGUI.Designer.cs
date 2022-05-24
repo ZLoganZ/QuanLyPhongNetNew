@@ -30,18 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.AfterPayClientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsBill = new QuanLyPhongNet.dsBill();
             this.MemberInformationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsMember = new QuanLyPhongNet.dsMember();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.MemberInformationTableAdapter = new QuanLyPhongNet.dsMemberTableAdapters.MemberInformationTableAdapter();
-            this.dsBill = new QuanLyPhongNet.dsBill();
-            this.AfterPayClientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AfterPayClientTableAdapter = new QuanLyPhongNet.dsBillTableAdapters.AfterPayClientTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.AfterPayClientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MemberInformationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMember)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsBill)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AfterPayClientBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // AfterPayClientBindingSource
+            // 
+            this.AfterPayClientBindingSource.DataMember = "AfterPayClient";
+            this.AfterPayClientBindingSource.DataSource = this.dsBill;
+            // 
+            // dsBill
+            // 
+            this.dsBill.DataSetName = "dsBill";
+            this.dsBill.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // MemberInformationBindingSource
             // 
@@ -61,24 +71,15 @@
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyPhongNet.ReportBill.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(947, 534);
+            this.reportViewer1.Size = new System.Drawing.Size(1231, 711);
             this.reportViewer1.TabIndex = 0;
             // 
             // MemberInformationTableAdapter
             // 
             this.MemberInformationTableAdapter.ClearBeforeFill = true;
-            // 
-            // dsBill
-            // 
-            this.dsBill.DataSetName = "dsBill";
-            this.dsBill.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // AfterPayClientBindingSource
-            // 
-            this.AfterPayClientBindingSource.DataMember = "AfterPayClient";
-            this.AfterPayClientBindingSource.DataSource = this.dsBill;
             // 
             // AfterPayClientTableAdapter
             // 
@@ -86,19 +87,18 @@
             // 
             // ReportGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(947, 534);
+            this.ClientSize = new System.Drawing.Size(1231, 711);
             this.Controls.Add(this.reportViewer1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ReportGUI";
             this.Text = "ReportGUI";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReportGUI_FormClosed);
             this.Load += new System.EventHandler(this.ReportGUI_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.AfterPayClientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsBill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MemberInformationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMember)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsBill)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AfterPayClientBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -103,5 +103,16 @@ namespace QuanLyPhongNet.Properties {
                 return ((string)(this["QuanLyPhongNetConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\loganz;Initial Catalog=QuanLyPhongNet;Persist Security Info=True;Us" +
+            "er ID=sa;Password=alone1405")]
+        public string QuanLyPhongNetConnectionString2 {
+            get {
+                return ((string)(this["QuanLyPhongNetConnectionString2"]));
+            }
+        }
     }
 }

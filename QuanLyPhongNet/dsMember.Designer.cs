@@ -2286,7 +2286,7 @@ SELECT MemberID, AccountName, Password, GroupUser, CurrentTime, CurrentMoney, St
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "";
+            this._connection.ConnectionString = global::QuanLyPhongNet.Properties.Settings.Default.QuanLyPhongNetConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2778,7 +2778,7 @@ SELECT memberID, MemberName, FoundedDate, PhoneNumber, MemberAddress, Email FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::QuanLyPhongNet.Properties.Settings.Default.QuanLyPhongNetConnectionString1;
+            this._connection.ConnectionString = global::QuanLyPhongNet.Properties.Settings.Default.QuanLyPhongNetConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3209,7 +3209,7 @@ SELECT memberID, MemberName, FoundedDate, PhoneNumber, MemberAddress, Email FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "";
+            this._connection.ConnectionString = global::QuanLyPhongNet.Properties.Settings.Default.QuanLyPhongNetConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
