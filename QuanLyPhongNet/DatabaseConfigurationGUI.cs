@@ -58,6 +58,11 @@ namespace QuanLyPhongNet
             {
                 strConnect = string.Format(@"Server=.\{0};Database=QuanLyPhongNet;User ID={1};Password={2};", cboServer.Text, txtUserID.Text, txtPass.Text);
             }
+            if (cboServer.Text == "")
+            {
+                MessageBox.Show("Bạn chưa chọn Server", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             QuanLyPhongNet.Common.Properties.Settings.Default.strConnect = strConnect;
             if (!new SqlData().TestConnection())
             {

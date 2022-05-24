@@ -94,8 +94,9 @@ namespace QuanLyPhongNet.BUS
                    }
                    if (lstMessege[request].Equals("LogOutPls!!"))
                    {
-                       UpdateRemainTime(lstMessege[1], TimeSpan.Parse(lstMessege[2]));
-                   }
+                        UpdateRemainTime(lstMessege[1], TimeSpan.Parse(lstMessege[2]));
+                        ChangeStateClient(currentClient, "WAITING", "");
+                    }
                    else if(lstMessege[request].Equals("AllowToLogInPls!!"))
                    {
                        //1 , gio da no choi
@@ -121,19 +122,19 @@ namespace QuanLyPhongNet.BUS
                m.AccountName = m.AccountName.ToUpper();
                if (m.AccountName.Equals(userName))
                {
-                   float money = m.CurrentMoney-ChangeUseTimeToMinutes(remainTime.ToString()) * 100;
-                   new NetRoomWriter().UpdateMember(1, m.AccountName, m.Password, m.GroupUserName, remainTime, money, m.Status);
+                   float money = ChangeUseTimeToMinutes(remainTime.ToString()) * 10000 / 60;
+                   new NetRoomWriter().UpdateMember(m.MemberID, m.AccountName, m.Password, m.GroupUserName, remainTime, money, m.Status);
                }
            }
        }
 
        private bool CheckLogin(string userName,string pass)
        {
-           userName = userName.ToUpper();
+           //userName = userName.ToUpper();
            List<Member> lstMember = new NetRoomReader().GetAllMembers();
            foreach(Member m in lstMember)
            {
-               m.AccountName = m.AccountName.ToUpper();
+               //m.AccountName = m.AccountName.ToUpper();
                if (m.AccountName.Equals(userName) && m.Password.Equals(pass))
                {
                    if (ChangeUseTimeToMinutes(m.TimeInAccount.ToString()) > 0)

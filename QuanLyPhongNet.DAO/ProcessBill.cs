@@ -24,8 +24,8 @@
             bill.FoundedUser = userName;
             bill.FoundedDate = foundedDate;
             bill.PriceTotal = priceTotal;
-            objReader.Bills.InsertOnSubmit(bill);
-            objReader.SubmitChanges();
+            objWriter.Bills.InsertOnSubmit(bill);
+            objWriter.SubmitChanges();
         }
         public List<QuanLyPhongNet.DTO.Bill> LoadAllBills()
         {

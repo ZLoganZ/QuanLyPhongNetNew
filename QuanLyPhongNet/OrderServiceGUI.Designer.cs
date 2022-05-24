@@ -170,6 +170,7 @@
             this.numericUpDown1.Size = new System.Drawing.Size(159, 31);
             this.numericUpDown1.TabIndex = 17;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.ValueChangedEventHandle);
             // 
             // label5
             // 

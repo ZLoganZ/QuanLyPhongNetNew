@@ -23,6 +23,7 @@ namespace QuanLyPhongNet
         private string unit;
         private string group;
         private int inventory;
+        private float money;
 
         public HomeGUI()
         {
@@ -218,15 +219,16 @@ namespace QuanLyPhongNet
 		
 		private void drgvMember_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            AddTimeMemberGUI frmAddTime = new AddTimeMemberGUI();
+            int r = drgvMember.CurrentRow.Index;
+            name = drgvMember.Rows[r].Cells[1].Value.ToString();
+            money = (float)drgvMember.Rows[r].Cells[5].Value;
+            AddTimeMemberGUI frmAddTime = new AddTimeMemberGUI(name, money);
             frmAddTime.ShowDialog();
             LoadSourceToDRGV();
         }
 		
 		private void picUpdateMember_Click(object sender, EventArgs e)
         {
-            AddTimeMemberGUI frmAddTime = new AddTimeMemberGUI();
-            frmAddTime.ShowDialog();
             LoadSourceToDRGV();
         }
 		

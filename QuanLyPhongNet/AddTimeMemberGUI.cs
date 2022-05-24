@@ -15,11 +15,19 @@ namespace QuanLyPhongNet
     {
         private NetRoomWriter objWriter;
         private NetRoomReader objreader;
+        bool check = false;
         public AddTimeMemberGUI()
         {
             InitializeComponent();
             objWriter = new NetRoomWriter();
             objreader = new NetRoomReader();
+        }
+
+        public AddTimeMemberGUI(string name, float money) : this()
+        {
+            txtName.Text = name;
+            textBox5.Text = money.ToString();
+            check = true;
         }
 
         private void AddTimeMemberGUILoadEventHandler(object sender, EventArgs e)
@@ -33,7 +41,6 @@ namespace QuanLyPhongNet
             this.Close();
             //frmHome.ShowDialog();
         }
-        bool check = false;
         float basaumuoi = 3600;
         DTO.Member m;
         private void OKClickEventHandler(object sender, EventArgs e)
@@ -44,18 +51,21 @@ namespace QuanLyPhongNet
                 txtName.Select();
                 return;
             }
-            List<DTO.Member> list = objreader.GetAllMembers();
-            foreach(var member in list)
+            if (!check)
             {
-                if (member.AccountName == txtName.Text && check == false)
+                List<DTO.Member> list = objreader.GetAllMembers();
+                foreach (var member in list)
                 {
-                    check = true;
-                    textBox5.Text = member.CurrentMoney.ToString();
-                    m = member;
-                    return;
+                    if (member.AccountName == txtName.Text && check == false)
+                    {
+                        check = true;
+                        textBox5.Text = member.CurrentMoney.ToString();
+                        m = member;
+                        return;
+                    }
                 }
             }
-            if(check == false)
+            if(!check)
             {
                 MessageBox.Show("Tài khoản không tồn tại!");
                 txtName.Select();

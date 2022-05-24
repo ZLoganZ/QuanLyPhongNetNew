@@ -48,8 +48,18 @@ namespace QuanLyPhongNet
 
         private void OKClickEventHandler(object sender, EventArgs e)
         {
-            
+            if (numericUpDown1.Value > decimal.Parse(textBox5.Text))
+                return;
             this.Close();
+        }
+
+        private void ValueChangedEventHandle(object sender, EventArgs e)
+        {
+            if (numericUpDown1.Value > decimal.Parse(textBox5.Text))
+            {
+                MessageBox.Show("Số lượng không được lớn hơn số lượng tồn kho");
+                numericUpDown1.Value = decimal.Parse(textBox5.Text);
+            }
         }
     }
 }

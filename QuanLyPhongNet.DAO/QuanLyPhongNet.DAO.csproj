@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProcessOrder.cs" />
     <Compile Include="ProcessUser.cs" />
     <Compile Include="ProcessBill.cs" />
     <Compile Include="ProcessCard.cs" />

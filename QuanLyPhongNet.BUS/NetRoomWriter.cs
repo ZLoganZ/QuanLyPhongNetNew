@@ -20,6 +20,7 @@
         private ProcessGroupUser groupUserObjectWriter;
         private ProcessUser userObjectWriter;
         private ProcessBill billObjectWriter;
+        private ProcessOrder orderObjectWriter;
 
         public NetRoomWriter()
         {
@@ -33,6 +34,7 @@
             groupUserObjectWriter = new ProcessGroupUser();
             userObjectWriter = new ProcessUser();
             billObjectWriter = new ProcessBill();
+            orderObjectWriter = new ProcessOrder();
         }
 
         public void InsertMember(string account, string pass, string groupUser, TimeSpan time, float money, string status)
@@ -149,6 +151,26 @@
         public void DeleteUser(string userName)
         {
             userObjectWriter.DeleteUser(userName);
-        }       
+        }
+
+        public void InsertBill(int billID, string userName, DateTime foundedDate, float priceTotal)
+        {
+            billObjectWriter.CreateNewBill(billID, userName, foundedDate, priceTotal);
+        }
+
+        public void InsertOrderDrink(string clientname, int ID, int quantity, int price)
+        {
+            orderObjectWriter.AddOrderDrink(clientname, ID, quantity, price);
+        }
+
+        public void InsertOrderCard(string clientname, int ID, int quantity, int price)
+        {
+            orderObjectWriter.AddOrderCard(clientname, ID, quantity, price);
+        }
+
+        public void InsertOrderFood(string clientname, int ID, int quantity, int price)
+        {
+            orderObjectWriter.AddOrderFood(clientname, ID, quantity, price);
+        }
     }
 }
