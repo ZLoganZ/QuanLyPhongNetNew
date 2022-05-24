@@ -73,9 +73,9 @@ namespace QuanLyPhongNet
             else
             {
                 float money = float.Parse(txtAddMoney.Text);
-                if (money <= 0)
+                if (money <= 2000)
                 {
-                    MessageBox.Show("Số tiền cần cộng phải lớn hơn 0!");
+                    MessageBox.Show("Số tiền cần cộng phải lớn hơn 2000VND!");
                     txtAddMoney.Select();
                     return;
                 }

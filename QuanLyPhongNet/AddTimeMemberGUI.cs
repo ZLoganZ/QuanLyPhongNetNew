@@ -77,9 +77,15 @@ namespace QuanLyPhongNet
             if(!check)
             {
                 MessageBox.Show("Tài khoản không tồn tại!");
-                txtName.Select();
+                txtName.Focus();
                 return;
             }
+            if(int.Parse(txtAddMoney.Text) < 2000)
+            {
+                MessageBox.Show("Không được nạp ít hơn 2000VND!");
+                txtAddMoney.Focus();
+                return;
+            }    
             //MessageBox.Show((TimeSpan.Parse((TimeSpan.FromSeconds((float.Parse(txtAddMoney.Text) * (basaumuoi / 10000))) + m.TimeInAccount).ToString()).ToString()));
             objWriter.UpdateMember(mem.MemberID, mem.AccountName, mem.Password, mem.GroupUserName, TimeSpan.Parse((TimeSpan.FromSeconds((float.Parse(txtAddMoney.Text) * (basaumuoi / 10000))) + mem.TimeInAccount).ToString()), mem.CurrentMoney + float.Parse(txtAddMoney.Text), "Cho Phép");
             MessageBox.Show("Thêm thành công!");
