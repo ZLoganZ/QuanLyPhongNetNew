@@ -90,7 +90,8 @@ namespace DoAnSE
                    }
                    if (lstMessage[request].Equals("LockClient!"))
                    {
-                       lockScreen.Visible = true;
+                        lockScreen.Clear();
+                        lockScreen.Visible = true;
                    }
                    if (lstMessage[request].Equals("OkePlayGo"))
                    {
