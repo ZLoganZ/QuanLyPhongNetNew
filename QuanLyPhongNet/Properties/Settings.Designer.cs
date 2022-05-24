@@ -12,7 +12,7 @@ namespace QuanLyPhongNet.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -90,6 +90,17 @@ namespace QuanLyPhongNet.Properties {
         public string QuanLyPhongNetConnectionString {
             get {
                 return ((string)(this["QuanLyPhongNetConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-G8GJO4A2;Initial Catalog=QuanLyPhongNet;Integrated Security=Tr" +
+            "ue")]
+        public string QuanLyPhongNetConnectionString1 {
+            get {
+                return ((string)(this["QuanLyPhongNetConnectionString1"]));
             }
         }
     }

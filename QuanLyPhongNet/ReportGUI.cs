@@ -26,5 +26,15 @@ namespace QuanLyPhongNet
         {
             this.Close();
         }
+
+        private void ReportGUI_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dsBill.AfterPayClient' table. You can move, or remove it, as needed.
+            this.AfterPayClientTableAdapter.Fill(this.dsBill.AfterPayClient);
+            // TODO: This line of code loads data into the 'dsMember.MemberInformation' table. You can move, or remove it, as needed.
+            this.MemberInformationTableAdapter.Fill(this.dsMember.MemberInformation);
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }
