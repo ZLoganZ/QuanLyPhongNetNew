@@ -43,7 +43,7 @@ namespace DoAnSE
            }
            catch
            {
-                MessageBox.Show("Không kết nối được!!");
+                MessageBox.Show("Không kết nối được với Server!!");
                 check = false;
            }
            if (!check)

@@ -143,9 +143,10 @@ namespace QuanLyPhongNet
 
         private void PicOpenClientEventHandler(object sender, EventArgs e)
         {
-            if (drgvClient.SelectedRows.Count < 1)
+            int r = drgvClient.CurrentRow.Index;
+            if (drgvClient.Rows[r].Cells[2].Value.ToString().Equals("DISCONNECT"))
             {
-                MessageBox.Show("Chưa chọn máy để mở!");
+                MessageBox.Show("Máy chưa kết nối để mở!!");
                 return;
             }
             int index = drgvClient.SelectedRows[0].Index;
@@ -171,7 +172,7 @@ namespace QuanLyPhongNet
             }
             catch
             {
-                MessageBox.Show("Chưa chọn máy để thanh toán");
+                MessageBox.Show("Không thể thanh toán máy này!");
             }
         }
 
@@ -283,7 +284,7 @@ namespace QuanLyPhongNet
             }
             catch
             {
-                MessageBox.Show("Chưa chọn máy để khoá!");
+                MessageBox.Show("Không thể khóa máy này!");
             }
         }
 
