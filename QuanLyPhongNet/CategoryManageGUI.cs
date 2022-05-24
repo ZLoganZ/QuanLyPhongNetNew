@@ -14,7 +14,6 @@ namespace QuanLyPhongNet
 {
     public partial class CategoryManageGUI : Form
     {
-        private Parameters parameter;
         private NetRoomReader objReader;
         private NetRoomWriter objWriter;
         private const int TAB_FOOD = 0;
@@ -25,7 +24,6 @@ namespace QuanLyPhongNet
         public CategoryManageGUI()
         {
             InitializeComponent();
-            parameter = new Parameters();
             objReader = new NetRoomReader();
             objWriter = new NetRoomWriter();
         }
