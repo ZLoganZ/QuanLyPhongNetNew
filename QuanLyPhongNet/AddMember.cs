@@ -48,7 +48,6 @@ namespace QuanLyPhongNet
                 txtPass.Select();
                 return;
             }
-            List<DTO.Member> listMember = new List<DTO.Member>();
             foreach (DTO.Member member in objReader.GetAllMembers())
             {
                 if (member.AccountName.Equals(txtName.Text))

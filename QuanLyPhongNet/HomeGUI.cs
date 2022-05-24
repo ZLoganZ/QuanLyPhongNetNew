@@ -169,7 +169,7 @@ namespace QuanLyPhongNet
                 }
                 serverManager.arrClient[index].stateClient = "WAITING";
                 serverManager.arrClient[index].startTime = new DateTime();
-                LoadClient();
+                LoadClient();   
             }
             catch
             {
