@@ -78,7 +78,6 @@ namespace QuanLyPhongNet
         {
             if (ServerManager.refreshClient != serverManager.arrClient.Count)
             {
-               
                 ServerManager.refreshClient = serverManager.arrClient.Count;
                 LoadClient();
             }
@@ -109,12 +108,13 @@ namespace QuanLyPhongNet
             drgvCard.Columns[4].HeaderText = "Đơn Vị Tính";
             drgvCard.Columns[5].HeaderText = "Số Lượng Tồn";
             drgvMember.DataSource = objReader.GetAllMembers();
-            drgvMember.Columns[0].HeaderText = "Tên Tài Khoản";
-            drgvMember.Columns[1].HeaderText = "Mật Khẩu";
-            drgvMember.Columns[2].HeaderText = "Thuộc Nhóm";
-            drgvMember.Columns[3].HeaderText = "Thời Gian Hiện Có";
-            drgvMember.Columns[4].HeaderText = "Số Tiền Hiện Có";
-            drgvMember.Columns[5].HeaderText = "Trạng Thái";
+            drgvMember.Columns[0].HeaderText = "Mã Tài Khoản";
+            drgvMember.Columns[1].HeaderText = "Tên Tài Khoản";
+            drgvMember.Columns[2].HeaderText = "Mật Khẩu";
+            drgvMember.Columns[3].HeaderText = "Thuộc Nhóm";
+            drgvMember.Columns[4].HeaderText = "Thời Gian Hiện Có";
+            drgvMember.Columns[5].HeaderText = "Số Tiền Hiện Có";
+            drgvMember.Columns[6].HeaderText = "Trạng Thái";
             drgvStaff.DataSource = objReader.GetAllUsers();
 
             drgvClientGroup.DataSource = objReader.GetAllGroupClients();
@@ -144,9 +144,10 @@ namespace QuanLyPhongNet
 
         private void PicOpenClientEventHandler(object sender, EventArgs e)
         {
-            if (drgvClient.SelectedRows.Count < 1)
+            int r = drgvClient.CurrentRow.Index;
+            if (drgvClient.Rows[r].Cells[2].Value.ToString().Equals("DISCONNECT"))
             {
-                MessageBox.Show("Chưa chọn máy để mở!");
+                MessageBox.Show("Máy chưa kết nối để mở!!");
                 return;
             }
             int index = drgvClient.SelectedRows[0].Index;
@@ -172,7 +173,7 @@ namespace QuanLyPhongNet
             }
             catch
             {
-                MessageBox.Show("Chưa chọn máy để thanh toán");
+                MessageBox.Show("Không thể thanh toán máy này!");
             }
         }
 
@@ -284,7 +285,7 @@ namespace QuanLyPhongNet
             }
             catch
             {
-                MessageBox.Show("Chưa chọn máy để khoá!");
+                MessageBox.Show("Không thể khóa máy này!");
             }
         }
 

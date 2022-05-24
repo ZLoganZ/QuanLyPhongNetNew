@@ -8,6 +8,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DoAnSE
 {
@@ -15,6 +16,7 @@ namespace DoAnSE
    public class ClientManager
     {
        IPEndPoint iP;
+       public bool check = true;
        public Socket client;
        int portCode = 9999;
        const int maxGetByte = 1024 * 4000;
@@ -41,9 +43,11 @@ namespace DoAnSE
            }
            catch
            {
-                System.Windows.Forms.MessageBox.Show("Deo ket noi duoc!!");
+                MessageBox.Show("Không kết nối được với Server!!");
+                check = false;
            }
-          
+           if (!check)
+                return;
            Thread listenSever = new Thread(ReceiveDataFromSever);
            listenSever.IsBackground = true;
            listenSever.Start();

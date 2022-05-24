@@ -100,12 +100,10 @@ namespace QuanLyPhongNet.BUS
                             ChangeStateClient(currentClient, "WAIT FOR PAYMENT", lstMessege[2]);
                         else
                             ChangeStateClient(currentClient, "WAITING", "");
-                    }
-                   else if(lstMessege[request].Equals("AllowToLogInPls!!"))
+                   }
+                   if(!currentClient.Connected)
                    {
-                       //1 , gio da no choi
-                       //2 ten  user
-                       // xuong sql cap nhat gio choi lai
+                        ChangeStateClient(currentClient, "DISCONNECTED", "");
                    }
                }
                
