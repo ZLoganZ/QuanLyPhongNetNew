@@ -33,6 +33,10 @@ namespace DoAnSE
             InitializeComponent(); 
             CheckForIllegalCrossThreadCalls = false;
             clientManager = new ClientManager();
+            if (!clientManager.check)
+            {
+                this.Close();
+            }
             timerProgram.Interval = 1000;
             timerProgram.Enabled = true;
             timerProgram.Start();      
@@ -41,6 +45,10 @@ namespace DoAnSE
         {
             this.clientManager = x;
             InitializeComponent();
+            if (!clientManager.check)
+            {
+                this.Close();
+            }
         }
         private void TimingLoadEventHandler(object sender, EventArgs e)
         {
