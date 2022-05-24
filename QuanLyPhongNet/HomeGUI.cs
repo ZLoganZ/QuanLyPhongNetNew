@@ -177,7 +177,22 @@ namespace QuanLyPhongNet
             }
         }
 
-         private void picOrder_MouseHover(object sender, EventArgs e)
+        private void PicLockClientClickEventHandler(object sender, EventArgs e)
+        {
+            try
+            {
+                int index = drgvClient.SelectedRows[0].Index;
+                serverManager.LockClient(index);
+                serverManager.arrClient[index].startTime = new DateTime();
+                LoadClient();
+            }
+            catch
+            {
+                MessageBox.Show("Không thể khóa máy này!");
+            }
+        }
+
+        private void picOrder_MouseHover(object sender, EventArgs e)
         {
             picOrder.BorderStyle = BorderStyle.Fixed3D;
         }
@@ -271,22 +286,6 @@ namespace QuanLyPhongNet
         private void picDeleteMember_MouseLeave(object sender, EventArgs e)
         {
             picDeleteMember.BorderStyle = BorderStyle.None;
-        }
-
-        private void PicLockClientClickEventHandler(object sender, EventArgs e)
-        {
-            try
-            {
-                int index = drgvClient.SelectedRows[0].Index;
-                serverManager.LockClient(index);
-                serverManager.arrClient[index].stateClient = "WAITING";
-                serverManager.arrClient[index].startTime = new DateTime();
-                LoadClient();
-            }
-            catch
-            {
-                MessageBox.Show("Không thể khóa máy này!");
-            }
         }
 
         private void drgvDrink_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
