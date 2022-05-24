@@ -39,13 +39,13 @@ namespace QuanLyPhongNet
             if (txtName.Equals(""))
             {
                 MessageBox.Show("Chưa nhập tài khoản!");
-                txtName.Select();
+                txtName.Focus();
                 return;
             }
             else if (txtPass.Equals(""))
             {
                 MessageBox.Show("Chưa nhập mật khẩu!");
-                txtPass.Select();
+                txtPass.Focus();
                 return;
             }
             foreach (DTO.Member member in objReader.GetAllMembers())
@@ -53,7 +53,7 @@ namespace QuanLyPhongNet
                 if (member.AccountName.Equals(txtName.Text))
                 {
                     MessageBox.Show("Tài khoản đã tồn tại!");
-                    txtName.Select();
+                    txtName.Focus();
                     return;
                 }
             }
@@ -61,22 +61,28 @@ namespace QuanLyPhongNet
             {
                 grbTimeManager.Enabled = true;
                 btnOK.Text = "Cập Nhập";
-                txtAddMoney.Select();
+                txtAddMoney.Focus();
                 return;
             }
             if (txtAddMoney.Text == "" || txtAddMoney.Text == "0")
             {
                 MessageBox.Show("Chưa nhập số tiền cần cộng!");
-                txtAddMoney.Select();
+                txtAddMoney.Focus();
                 return;
             }
             else
             {
                 float money = float.Parse(txtAddMoney.Text);
-                if (money <= 2000)
+                if (money < 2000)
                 {
                     MessageBox.Show("Số tiền cần cộng phải lớn hơn 2000VND!");
-                    txtAddMoney.Select();
+                    txtAddMoney.Focus();
+                    return;
+                }
+                else if(money % 1000 != 0)
+                {
+                    MessageBox.Show("Số tiền cần cộng phải chia hết cho 1000!");
+                    txtAddMoney.Focus();
                     return;
                 }
                 else

@@ -80,14 +80,12 @@ namespace DoAnSE
                 ClientManager.requestServer = -2;
                 min = 0;
                 ResetTime();
-
             }
 
             else if (ClientManager.requestServer == ClientManager.PAYMENT)
             {
                 ResetTime();
             }
-
             TimeCount();
             if (ClientManager.requestServer == -2)
             {
@@ -107,7 +105,6 @@ namespace DoAnSE
                 {
                     lockScreen.Show();
                 }
-
             }
 
         }
@@ -116,13 +113,13 @@ namespace DoAnSE
         {
             txtUseTime.Text= hour.ToString("D2") + ":" + min.ToString("D2") + ":" + sec.ToString("D2");
             sec++;
-            if(sec>60)
+            if(sec == 60)
             {
                 min++;
                 sec = 00;
             }
 
-            if(min > 60)
+            if(min == 60)
             {
                 hour++;
                 min = 00;
@@ -166,6 +163,7 @@ namespace DoAnSE
         private void LogoutClickEventHandler(object sender, EventArgs e)
         {
             clientManager.LogoutMember(userName, remain);
+            userName = "";
             clientManager.lockScreen.Visible = true;
         }
 

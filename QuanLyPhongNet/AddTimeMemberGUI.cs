@@ -85,7 +85,13 @@ namespace QuanLyPhongNet
                 MessageBox.Show("Không được nạp ít hơn 2000VND!");
                 txtAddMoney.Focus();
                 return;
-            }    
+            }
+            if(int.Parse(txtAddMoney.Text) % 1000 != 0)
+            {
+                MessageBox.Show("Số nạp phải chia hết cho 1000");
+                txtAddMoney.Focus();
+                return;
+            }
             //MessageBox.Show((TimeSpan.Parse((TimeSpan.FromSeconds((float.Parse(txtAddMoney.Text) * (basaumuoi / 10000))) + m.TimeInAccount).ToString()).ToString()));
             objWriter.UpdateMember(mem.MemberID, mem.AccountName, mem.Password, mem.GroupUserName, TimeSpan.Parse((TimeSpan.FromSeconds((float.Parse(txtAddMoney.Text) * (basaumuoi / 10000))) + mem.TimeInAccount).ToString()), mem.CurrentMoney + float.Parse(txtAddMoney.Text), "Cho Phép");
             MessageBox.Show("Thêm thành công!");

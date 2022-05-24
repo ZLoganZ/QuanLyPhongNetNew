@@ -101,11 +101,6 @@ namespace QuanLyPhongNet.BUS
                         else
                             ChangeStateClient(currentClient, "WAITING", "");
                    }
-                   if(!currentClient.Connected)
-                   {
-                        ChangeStateClient(currentClient, "DISCONNECTED", "");
-                        arrClient.RemoveAll(x => x.client == currentClient);
-                    }
                }
                
            }
