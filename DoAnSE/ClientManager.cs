@@ -104,12 +104,14 @@ namespace DoAnSE
                    {
                        lockScreen.Visible = true;
                        message = "Acount not exist !! Or Wrong Username, Password";
-                   }
+                        MessageBox.Show("Acount not exist !! Or Wrong Username, Password");
+                    }
                    if (lstMessage[request].Equals("Your account is exhausted.Recharge to use it!!!"))
                    {
                        lockScreen.Visible = true;
-                       message = "Your account is exhausted.Recharge to use it!!!";
-                   }
+                       message = "Your account is exhausted. Recharge to use it!!!";
+                        MessageBox.Show("Your account is exhausted. Recharge to use it!!!");
+                    }
                 }      
             }
            catch
