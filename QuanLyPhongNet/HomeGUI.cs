@@ -108,12 +108,13 @@ namespace QuanLyPhongNet
             drgvCard.Columns[4].HeaderText = "Đơn Vị Tính";
             drgvCard.Columns[5].HeaderText = "Số Lượng Tồn";
             drgvMember.DataSource = objReader.GetAllMembers();
-            drgvMember.Columns[0].HeaderText = "Tên Tài Khoản";
-            drgvMember.Columns[1].HeaderText = "Mật Khẩu";
-            drgvMember.Columns[2].HeaderText = "Thuộc Nhóm";
-            drgvMember.Columns[3].HeaderText = "Thời Gian Hiện Có";
-            drgvMember.Columns[4].HeaderText = "Số Tiền Hiện Có";
-            drgvMember.Columns[5].HeaderText = "Trạng Thái";
+            drgvMember.Columns[0].HeaderText = "Mã Tài Khoản";
+            drgvMember.Columns[1].HeaderText = "Tên Tài Khoản";
+            drgvMember.Columns[2].HeaderText = "Mật Khẩu";
+            drgvMember.Columns[3].HeaderText = "Thuộc Nhóm";
+            drgvMember.Columns[4].HeaderText = "Thời Gian Hiện Có";
+            drgvMember.Columns[5].HeaderText = "Số Tiền Hiện Có";
+            drgvMember.Columns[6].HeaderText = "Trạng Thái";
             drgvStaff.DataSource = objReader.GetAllUsers();
 
             drgvClientGroup.DataSource = objReader.GetAllGroupClients();
