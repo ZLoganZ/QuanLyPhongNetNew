@@ -18,7 +18,6 @@ namespace DoAnSE
         const int USECLIENT = 101;
         const int MEMBERLOGIN = 102;
         const int PAYMENT = 103;
-        Client lockScreen;
         int hour = 0;
         int min = 0;
         int sec = 0;
@@ -94,6 +93,13 @@ namespace DoAnSE
                 remain = total - use;
                 txtRemainTime.Text = remain.ToString();
                 txtUseTimeFee.Text = "0";
+                if (total == use)
+                {
+                    clientManager.LogoutMember(userName, remain);
+                    userName = "";
+                    clientManager.lockScreen.Clear();
+                    clientManager.lockScreen.Visible = true;
+                }
             }
 
             MoneyCount(txtUseTime.Text.ToString());
@@ -103,10 +109,13 @@ namespace DoAnSE
                 TimeSpan totalTime = TimeSpan.Parse(txtTotalTime.Text.ToString());
                 if (useTime > totalTime)
                 {
-                    lockScreen.Show();
+                    clientManager.LogoutMember(userName, remain);
+                    userName = "";
+                    clientManager.lockScreen.Clear();
+                    clientManager.lockScreen.Visible = true;
+                    useTime = TimeSpan.Parse("00:00:00");
                 }
             }
-
         }
        
         private void TimeCount()
@@ -164,6 +173,7 @@ namespace DoAnSE
         {
             clientManager.LogoutMember(userName, remain);
             userName = "";
+            clientManager.lockScreen.Clear();
             clientManager.lockScreen.Visible = true;
         }
 

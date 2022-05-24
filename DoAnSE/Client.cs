@@ -34,6 +34,11 @@ namespace DoAnSE
             this.WindowState = FormWindowState.Maximized;
         }
 
+        public void Clear()
+        {
+            txtPassword.Clear();
+        }
+        
         private void LoginClickEventHandler(object sender, EventArgs e)
         {
             string userName = txtUserName.Text.ToString();

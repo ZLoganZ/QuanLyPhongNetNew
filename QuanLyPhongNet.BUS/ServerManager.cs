@@ -121,8 +121,15 @@ namespace QuanLyPhongNet.BUS
                if (m.AccountName.Equals(userName))
                {
                    float money = ChangeUseTimeToMinutes(remainTime.ToString()) * 10000 / 60;
-                   new NetRoomWriter().UpdateMember(m.MemberID, m.AccountName, m.Password, m.GroupUserName, remainTime, money, m.Status);
-               }
+                    if (money > 0)
+                    {
+                        new NetRoomWriter().UpdateMember(m.MemberID, m.AccountName, m.Password, m.GroupUserName, remainTime, money, m.Status);
+                    }
+                    else
+                    {
+                        new NetRoomWriter().UpdateMember(m.MemberID, m.AccountName, m.Password, m.GroupUserName, remainTime, money, "Hết Thời Gian");
+                    }
+                }
            }
        }
 
