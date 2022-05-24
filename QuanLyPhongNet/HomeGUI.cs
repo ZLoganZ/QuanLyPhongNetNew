@@ -81,7 +81,7 @@ namespace QuanLyPhongNet
                 ServerManager.refreshClient = serverManager.arrClient.Count;
                 LoadClient();
             }
-            LoadClient();
+            //LoadClient();
         }
 
         private void LoadSourceToDRGV()
