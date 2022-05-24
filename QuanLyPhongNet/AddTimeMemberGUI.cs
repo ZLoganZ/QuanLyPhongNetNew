@@ -16,6 +16,7 @@ namespace QuanLyPhongNet
         private NetRoomWriter objWriter;
         private NetRoomReader objreader;
         bool check = false;
+        DTO.Member mem;
         public AddTimeMemberGUI()
         {
             InitializeComponent();
@@ -26,8 +27,20 @@ namespace QuanLyPhongNet
         public AddTimeMemberGUI(string name, float money) : this()
         {
             txtName.Text = name;
+            txtName.Enabled = false;
             textBox5.Text = money.ToString();
             check = true;
+            List<DTO.Member> list = objreader.GetAllMembers();
+            foreach (var member in list)
+            {
+                if (member.AccountName == txtName.Text)
+                {
+                    check = true;
+                    textBox5.Text = member.CurrentMoney.ToString();
+                    mem = member;
+                    return;
+                }
+            }
         }
 
         private void AddTimeMemberGUILoadEventHandler(object sender, EventArgs e)
@@ -42,7 +55,6 @@ namespace QuanLyPhongNet
             //frmHome.ShowDialog();
         }
         float basaumuoi = 3600;
-        DTO.Member m;
         private void OKClickEventHandler(object sender, EventArgs e)
         {
             if (txtName.Equals(""))
@@ -51,18 +63,15 @@ namespace QuanLyPhongNet
                 txtName.Select();
                 return;
             }
-            if (!check)
+            List<DTO.Member> list = objreader.GetAllMembers();
+            foreach (var member in list)
             {
-                List<DTO.Member> list = objreader.GetAllMembers();
-                foreach (var member in list)
+                if (member.AccountName == txtName.Text && check == false)
                 {
-                    if (member.AccountName == txtName.Text && check == false)
-                    {
-                        check = true;
-                        textBox5.Text = member.CurrentMoney.ToString();
-                        m = member;
-                        return;
-                    }
+                    check = true;
+                    textBox5.Text = member.CurrentMoney.ToString();
+                    mem = member;
+                    return;
                 }
             }
             if(!check)
@@ -72,7 +81,7 @@ namespace QuanLyPhongNet
                 return;
             }
             //MessageBox.Show((TimeSpan.Parse((TimeSpan.FromSeconds((float.Parse(txtAddMoney.Text) * (basaumuoi / 10000))) + m.TimeInAccount).ToString()).ToString()));
-            objWriter.UpdateMember(m.MemberID, m.AccountName, m.Password, m.GroupUserName, TimeSpan.Parse((TimeSpan.FromSeconds((float.Parse(txtAddMoney.Text) * (basaumuoi / 10000))) + m.TimeInAccount).ToString()), m.CurrentMoney + float.Parse(txtAddMoney.Text), "Cho Phép");
+            objWriter.UpdateMember(mem.MemberID, mem.AccountName, mem.Password, mem.GroupUserName, TimeSpan.Parse((TimeSpan.FromSeconds((float.Parse(txtAddMoney.Text) * (basaumuoi / 10000))) + mem.TimeInAccount).ToString()), mem.CurrentMoney + float.Parse(txtAddMoney.Text), "Cho Phép");
             MessageBox.Show("Thêm thành công!");
             //HomeGUI frmHome = new HomeGUI();
             this.Close();
