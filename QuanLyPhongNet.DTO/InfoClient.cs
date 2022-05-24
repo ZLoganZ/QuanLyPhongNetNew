@@ -15,5 +15,6 @@ namespace QuanLyPhongNet.DTO
         public string remainTime { get; set; }
         public Socket client { get; set; }
         public string nameCustomer { get; set; }
+        public string nameRoom { get; set; }
     }
 }

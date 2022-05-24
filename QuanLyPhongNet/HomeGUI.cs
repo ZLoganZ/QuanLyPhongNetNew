@@ -60,10 +60,20 @@ namespace QuanLyPhongNet
         }
         public void LoadClient()
         {
-
-            drgvClient.DataSource = (from client in serverManager.arrClient select new { ComputerName = client.nameClient,State=client.stateClient,StartTime=client.startTime }).ToArray();
+            List<DTO.Client> listClient = objReader.GetAllClient();
+            foreach (DTO.Client client in listClient)
+            {
+                foreach(var cli in serverManager.arrClient)
+                {
+                    if (cli.nameClient.Equals(client.ClientName))
+                    {
+                        client.Status = cli.stateClient;
+                        break;
+                    }
+                }
+            }
+            drgvClient.DataSource = listClient;
         }
-
         private void TimeHomeTickEventHandler(object sender, EventArgs e)
         {
             if (ServerManager.refreshClient != serverManager.arrClient.Count)

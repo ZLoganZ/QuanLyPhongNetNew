@@ -37,7 +37,7 @@ namespace DoAnSE
            try
            {
                client.Connect(iP);
-               client.Send(ConvertToByte("ConnectWithMePls!!|" + "May-1"));
+               client.Send(ConvertToByte("ConnectWithMePls!!|" + "MAY-1|" + "máy phòng máy lạnh"));
            }
            catch
            {

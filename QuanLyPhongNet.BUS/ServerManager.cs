@@ -74,7 +74,8 @@ namespace QuanLyPhongNet.BUS
                        {
                            stateClient = wait,
                            client = currentClient,
-                           nameClient = lstMessege[1]
+                           nameClient = lstMessege[1],
+                           nameRoom = lstMessege[2]
                        });
                        refreshClient = change;
                    }
@@ -95,7 +96,10 @@ namespace QuanLyPhongNet.BUS
                    if (lstMessege[request].Equals("LogOutPls!!"))
                    {
                         UpdateRemainTime(lstMessege[1], TimeSpan.Parse(lstMessege[2]));
-                        ChangeStateClient(currentClient, "WAITING", "");
+                        if (lstMessege[1] == "")
+                            ChangeStateClient(currentClient, "WAIT FOR PAYMENT", lstMessege[2]);
+                        else
+                            ChangeStateClient(currentClient, "WAITING", "");
                     }
                    else if(lstMessege[request].Equals("AllowToLogInPls!!"))
                    {
@@ -114,12 +118,12 @@ namespace QuanLyPhongNet.BUS
        }
        public void UpdateRemainTime(string userName,TimeSpan remainTime)
        {
-           userName = userName.ToUpper();
+           //userName = userName.ToUpper();
            List<Member> lstMember = new NetRoomReader().GetAllMembers();
            
            foreach (Member m in lstMember)
            {
-               m.AccountName = m.AccountName.ToUpper();
+               //m.AccountName = m.AccountName.ToUpper();
                if (m.AccountName.Equals(userName))
                {
                    float money = ChangeUseTimeToMinutes(remainTime.ToString()) * 10000 / 60;
