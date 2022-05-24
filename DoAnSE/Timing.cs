@@ -57,6 +57,11 @@ namespace DoAnSE
 
         private void TimeProgramTickEventHandler(object sender, EventArgs e)
         {
+            txtRemainTime.Enabled = false;
+            txtServiceFee.Enabled = false;
+            txtTotalTime.Enabled = false;
+            txtUseTime.Enabled = false;
+            txtUseTimeFee.Enabled = false;
             if (ClientManager.requestServer == USECLIENT)
             {
                 lblUserName.Text = "UserName: Customer";
