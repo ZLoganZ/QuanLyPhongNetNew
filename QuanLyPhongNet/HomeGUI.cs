@@ -78,7 +78,6 @@ namespace QuanLyPhongNet
         {
             if (ServerManager.refreshClient != serverManager.arrClient.Count)
             {
-               
                 ServerManager.refreshClient = serverManager.arrClient.Count;
                 LoadClient();
             }
