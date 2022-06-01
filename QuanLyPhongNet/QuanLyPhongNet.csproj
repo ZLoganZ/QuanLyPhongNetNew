@@ -392,6 +392,7 @@
     <None Include="Resources\Button-Reload-icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\logo.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

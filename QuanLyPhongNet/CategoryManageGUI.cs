@@ -272,15 +272,19 @@ namespace QuanLyPhongNet
             {
                 case TAB_FOOD:
                     grbInformation.ForeColor = Color.Blue;
+                    grbInformation.Text = "Thông Tin Món Ăn";
                     break;
                 case TAB_DRINK:
                     grbInformation.ForeColor = Color.Chocolate;
+                    grbInformation.Text = "Thông Tin Nước Uống";
                     break;
                 case TAB_CARD:
                     grbInformation.ForeColor = Color.Indigo;
+                    grbInformation.Text = "Thông Tin Thẻ";
                     break;
                 case TAB_CATEGORY:
                     grbInformation.ForeColor = Color.DarkRed;
+                    grbInformation.Text = "Thông Tin Loại Danh Mục";
                     break;
             }
         }

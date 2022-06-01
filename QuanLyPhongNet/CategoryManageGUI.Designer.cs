@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoryManageGUI));
             this.tab = new System.Windows.Forms.TabControl();
-            this.tadFoods = new System.Windows.Forms.TabPage();
+            this.tabFoods = new System.Windows.Forms.TabPage();
             this.label50 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.txtUnitLotOfFood = new System.Windows.Forms.TextBox();
@@ -96,7 +96,7 @@
             this.picReload = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tab.SuspendLayout();
-            this.tadFoods.SuspendLayout();
+            this.tabFoods.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabDinks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -117,7 +117,7 @@
             // 
             // tab
             // 
-            this.tab.Controls.Add(this.tadFoods);
+            this.tab.Controls.Add(this.tabFoods);
             this.tab.Controls.Add(this.tabDinks);
             this.tab.Controls.Add(this.tabCards);
             this.tab.Controls.Add(this.tabCategory);
@@ -130,29 +130,31 @@
             this.tab.TabIndex = 1;
             this.tab.SelectedIndexChanged += new System.EventHandler(this.TabSelectedIndexChangedEventHandler);
             // 
-            // tadFoods
+            // tabFoods
             // 
-            this.tadFoods.BackColor = System.Drawing.Color.PowderBlue;
-            this.tadFoods.Controls.Add(this.label50);
-            this.tadFoods.Controls.Add(this.label49);
-            this.tadFoods.Controls.Add(this.txtUnitLotOfFood);
-            this.tadFoods.Controls.Add(this.label48);
-            this.tadFoods.Controls.Add(this.label47);
-            this.tadFoods.Controls.Add(this.txtInventoryNumberOfFood);
-            this.tadFoods.Controls.Add(this.cboFoodCategory);
-            this.tadFoods.Controls.Add(this.txtPriceUnitOfFood);
-            this.tadFoods.Controls.Add(this.txtFoodName);
-            this.tadFoods.Controls.Add(this.label22);
-            this.tadFoods.Controls.Add(this.label20);
-            this.tadFoods.Controls.Add(this.label19);
-            this.tadFoods.Controls.Add(this.label18);
-            this.tadFoods.Controls.Add(this.pictureBox3);
-            this.tadFoods.ForeColor = System.Drawing.Color.Red;
-            this.tadFoods.Location = new System.Drawing.Point(4, 29);
-            this.tadFoods.Name = "tadFoods";
-            this.tadFoods.Size = new System.Drawing.Size(1207, 241);
-            this.tadFoods.TabIndex = 3;
-            this.tadFoods.Text = "Thức Ăn";
+            this.tabFoods.BackColor = System.Drawing.Color.PowderBlue;
+            this.tabFoods.Controls.Add(this.label50);
+            this.tabFoods.Controls.Add(this.label49);
+            this.tabFoods.Controls.Add(this.txtUnitLotOfFood);
+            this.tabFoods.Controls.Add(this.label48);
+            this.tabFoods.Controls.Add(this.label47);
+            this.tabFoods.Controls.Add(this.txtInventoryNumberOfFood);
+            this.tabFoods.Controls.Add(this.cboFoodCategory);
+            this.tabFoods.Controls.Add(this.txtPriceUnitOfFood);
+            this.tabFoods.Controls.Add(this.txtFoodName);
+            this.tabFoods.Controls.Add(this.label22);
+            this.tabFoods.Controls.Add(this.label20);
+            this.tabFoods.Controls.Add(this.label19);
+            this.tabFoods.Controls.Add(this.label18);
+            this.tabFoods.Controls.Add(this.pictureBox3);
+            this.tabFoods.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tabFoods.ForeColor = System.Drawing.Color.Red;
+            this.tabFoods.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
+            this.tabFoods.Location = new System.Drawing.Point(4, 29);
+            this.tabFoods.Name = "tabFoods";
+            this.tabFoods.Size = new System.Drawing.Size(1207, 241);
+            this.tabFoods.TabIndex = 3;
+            this.tabFoods.Text = "Thức Ăn";
             // 
             // label50
             // 
@@ -889,8 +891,8 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CategoryManageGUI_FormClosed);
             this.Load += new System.EventHandler(this.CategoryManageGUILoadEventHandler);
             this.tab.ResumeLayout(false);
-            this.tadFoods.ResumeLayout(false);
-            this.tadFoods.PerformLayout();
+            this.tabFoods.ResumeLayout(false);
+            this.tabFoods.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabDinks.ResumeLayout(false);
             this.tabDinks.PerformLayout();
@@ -919,7 +921,7 @@
         #endregion
 
         private System.Windows.Forms.TabControl tab;
-        private System.Windows.Forms.TabPage tadFoods;
+        private System.Windows.Forms.TabPage tabFoods;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.TextBox txtUnitLotOfFood;
         private System.Windows.Forms.Label label48;
