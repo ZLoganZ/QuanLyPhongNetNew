@@ -58,7 +58,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Blue;
-            this.label2.Location = new System.Drawing.Point(443, 271);
+            this.label2.Location = new System.Drawing.Point(426, 249);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(165, 24);
             this.label2.TabIndex = 4;
@@ -69,7 +69,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(225, 627);
+            this.label3.Location = new System.Drawing.Point(225, 612);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(162, 24);
             this.label3.TabIndex = 5;
@@ -94,7 +94,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(38, 271);
+            this.label4.Location = new System.Drawing.Point(56, 249);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(143, 24);
             this.label4.TabIndex = 7;
@@ -103,7 +103,7 @@
             // picReport
             // 
             this.picReport.Image = global::QuanLyPhongNet.Properties.Resources.vector_285_14_01_512;
-            this.picReport.Location = new System.Drawing.Point(213, 464);
+            this.picReport.Location = new System.Drawing.Point(213, 427);
             this.picReport.Name = "picReport";
             this.picReport.Size = new System.Drawing.Size(184, 160);
             this.picReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -117,7 +117,7 @@
             // 
             this.picHome.BackColor = System.Drawing.Color.Transparent;
             this.picHome.Image = global::QuanLyPhongNet.Properties.Resources.trangchu;
-            this.picHome.Location = new System.Drawing.Point(20, 98);
+            this.picHome.Location = new System.Drawing.Point(38, 76);
             this.picHome.Name = "picHome";
             this.picHome.Size = new System.Drawing.Size(184, 160);
             this.picHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -130,7 +130,7 @@
             // picCategory
             // 
             this.picCategory.Image = global::QuanLyPhongNet.Properties.Resources.google_sites_icon_large1;
-            this.picCategory.Location = new System.Drawing.Point(435, 101);
+            this.picCategory.Location = new System.Drawing.Point(418, 79);
             this.picCategory.Name = "picCategory";
             this.picCategory.Size = new System.Drawing.Size(183, 157);
             this.picCategory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -145,8 +145,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QuanLyPhongNet.Properties.Resources.logo;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(640, 655);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(640, 640);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.llblSignOut);
             this.Controls.Add(this.label3);
